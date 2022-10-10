@@ -6,6 +6,8 @@ using System.IO;
 public class WebcamScript : MonoBehaviour
 {
     WebCamTexture webcamTexture;
+    public Renderer Saverenderer;
+    public List<Texture2D> TexturesList;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,12 +39,16 @@ public class WebcamScript : MonoBehaviour
         Texture2D photo = new Texture2D(webcamTexture.width, webcamTexture.height);
         photo.SetPixels(webcamTexture.GetPixels());
         photo.Apply();
-
+        TexturesList.Add(photo);
+        Saverenderer.material.mainTexture = photo;
         //Encode to a PNG
         byte[] bytes = photo.EncodeToPNG();
         //Write out the PNG. Of course you have to substitute your_path for something sensible
         File.WriteAllBytes("C:\\Users\\leopo\\Desktop\\" + "photo.png", bytes);
         webcamTexture.Stop();
+
+        yield return new WaitForSeconds(0.5f);
+        webcamTexture.Play();
     }
 
 
