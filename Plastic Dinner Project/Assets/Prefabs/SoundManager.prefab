@@ -56,5 +56,53 @@ MonoBehaviour:
     loop: 1
     playOnAwake: 1
     clips:
-    - {fileID: 8300000, guid: 668d7418e1755084f80c589bdee1fb73, type: 3}
+    - {fileID: 8300000, guid: 5c07f1f340819ea44a5d2500f4b148fc, type: 3}
+    source: {fileID: 0}
+  - name: Clock
+    volume: 1
+    pitch: 1
+    spatialBlend: 0
+    minDist3D: 0
+    maxDist3D: 0
+    mute: 0
+    loop: 0
+    playOnAwake: 0
+    clips:
+    - {fileID: 8300000, guid: 6b65fdaeefd9f794bb5c825e948c5a30, type: 3}
+    source: {fileID: 0}
+  - name: Ding
+    volume: 1
+    pitch: 1
+    spatialBlend: 0
+    minDist3D: 0
+    maxDist3D: 0
+    mute: 0
+    loop: 0
+    playOnAwake: 0
+    clips:
+    - {fileID: 8300000, guid: faa278d131436ed49bc80b5a2f1468f1, type: 3}
+    source: {fileID: 0}
+  - name: Happy
+    volume: 1
+    pitch: 1
+    spatialBlend: 0
+    minDist3D: 0
+    maxDist3D: 0
+    mute: 0
+    loop: 0
+    playOnAwake: 0
+    clips:
+    - {fileID: 8300000, guid: fb065c9a11a9ad047af90c43121eb79c, type: 3}
+    source: {fileID: 0}
+  - name: Angry
+    volume: 1
+    pitch: 1
+    spatialBlend: 0
+    minDist3D: 0
+    maxDist3D: 0
+    mute: 0
+    loop: 0
+    playOnAwake: 0
+    clips:
+    - {fileID: 8300000, guid: b3d70a00c3945e8409f39a8b66ce00d9, type: 3}
     source: {fileID: 0}
