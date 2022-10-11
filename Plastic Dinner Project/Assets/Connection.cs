@@ -31,12 +31,12 @@ public class Connection : MonoBehaviour
 
         websocket.OnMessage += (bytes) =>
         {
-            Debug.Log("OnMessage!");
-            Debug.Log(bytes);
+            
+            //Debug.Log(bytes);
 
             // getting the message as a string
-            // var message = System.Text.Encoding.UTF8.GetString(bytes);
-            // Debug.Log("OnMessage! " + message);
+            var message = System.Text.Encoding.UTF8.GetString(bytes);
+            Debug.Log("OnMessage! " + message);
         };
 
         // Keep sending messages at every 0.3s
