@@ -14,7 +14,7 @@ public class OrderTimer : MonoBehaviour
 
     void Start()
     {
-        gameTimer = transform.parent.GetComponent<GameTimer>();
+        gameTimer = transform.parent.parent.GetComponent<GameTimer>();
         if (gameTimer.timer > gameTimer.timerDuration * (3 / 4))
         {
             orderDuration = 10;

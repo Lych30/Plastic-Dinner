@@ -6,6 +6,7 @@ public class MenuManager : MonoBehaviour
 {
     public GameObject gameOver;
     public GameObject menu;
+    public GameObject playerUI;
 
     public bool isMenu = true;
     public bool isGameOver = false;
@@ -25,6 +26,7 @@ public class MenuManager : MonoBehaviour
         isInGame = false;
         menu.SetActive(true);
         gameOver.SetActive(false);
+        playerUI.SetActive(false);
     }
 
     void Update()
@@ -65,5 +67,6 @@ public class MenuManager : MonoBehaviour
         isMenu = false;
         menu.SetActive(false);
         isInGame = true;
+        playerUI.SetActive(true);
     }
 }
