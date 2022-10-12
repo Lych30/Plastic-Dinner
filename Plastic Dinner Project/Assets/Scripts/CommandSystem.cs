@@ -4,7 +4,8 @@ using UnityEngine;
 public class CommandSystem : MonoBehaviour
 {
     public Connection connection;
-        
+    public MenuManager menu; 
+
     [Header("______GAME DESIGN________")]
     public List<Command> commandList = new List<Command>();                  // the list of commands that can appear on screen
     public List<Command> commandsUnlocked = new List<Command>();            // the list of acceptable commmands at the time
@@ -14,16 +15,10 @@ public class CommandSystem : MonoBehaviour
     public bool bConditionsAreMet = false;                          // don't forget to click on game view or input won't be taken
     public List<Food> currentCommand = new List<Food>();                           // the command the player send
 
-    public bool isInGame = true;
-    private void Awake()
-    {
-        isInGame = true;
-    }
     // Update is called once per frame
     void Update()
     {
-
-        if (Input.GetKeyDown(KeyCode.JoystickButton0) && isInGame)
+        if (Input.GetKeyDown(KeyCode.JoystickButton0) && menu.isInGame)
         {
             //Debug.Log("Ding ! ");
             bConditionsAreMet = false;
