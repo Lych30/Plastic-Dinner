@@ -61,7 +61,7 @@ public class CommandSystem : MonoBehaviour
     {
         if(currentCommand.Count <= 0) 
         { 
-            Debug.Log("Error : Command sent is null or not recognized ! ");  
+            Debug.Log("Command sent is null or not recognized ! ");  
             return; 
         }
 
