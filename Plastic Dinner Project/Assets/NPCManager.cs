@@ -10,6 +10,7 @@ public class NPCManager : MonoBehaviour
     public List<NPCcontroler> NPC_List;
     public GameObject npcGameObject;
     public Transform spawnTransform;
+    public Transform Exit;
     public int MaxNPCs;
 
     private GameObject[] Tables;

@@ -118,8 +118,11 @@ public class CommandSystem : MonoBehaviour
         }
         if (hasFound)
         {
+            CustomerLeave();
             return true;
         }
+        CustomerLeave();
+        return false;
         //for (int i = 0; i < commandsUnlocked.Count; i++)
         //{
         //    List<Food> commandsFoods = commandsUnlocked[i].foods;
@@ -139,7 +142,13 @@ public class CommandSystem : MonoBehaviour
         //        return true;
         //    }
         //}
+    }
 
-        return false;
+    void CustomerLeave()
+    {
+        commandsWaiting.RemoveAt(0);
+        NPCManager.Instance.NPC_List[0].Destination = NPCManager.Instance.Exit.position;
+        Destroy(NPCManager.Instance.NPC_List[0].gameObject,5);
+        NPCManager.Instance.NPC_List.RemoveAt(0);
     }
 }

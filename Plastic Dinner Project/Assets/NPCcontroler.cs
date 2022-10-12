@@ -19,6 +19,7 @@ public class NPCcontroler : MonoBehaviour
         {
             if (!orderTaken)
             {
+                NPCManager.Instance.NPC_List.Add(this);
                 CommandSystem.Instance.AddCommandToDo();
                 orderTaken = true;
             }
@@ -32,8 +33,5 @@ public class NPCcontroler : MonoBehaviour
 
     }
 
-    void OnDestroy()
-    {
-        NPCManager.Instance.NPC_List.Remove(this);
-    }
+    
 }
