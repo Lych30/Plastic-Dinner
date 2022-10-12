@@ -1,14 +1,14 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 using NativeWebSocket;
 
 public class Connection : MonoBehaviour
 {
+    public System.String message;
+
     WebSocket websocket;
 
+    
     // Start is called before the first frame update
     async void Start()
     {
@@ -35,8 +35,8 @@ public class Connection : MonoBehaviour
             //Debug.Log(bytes);
 
             // getting the message as a string
-            var message = System.Text.Encoding.UTF8.GetString(bytes);
-            Debug.Log("OnMessage! " + message);
+            message = System.Text.Encoding.UTF8.GetString(bytes);
+            //Debug.Log("OnMessage! " + message);
         };
 
         // Keep sending messages at every 0.3s

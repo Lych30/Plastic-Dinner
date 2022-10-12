@@ -6,21 +6,24 @@ using System.IO;
 public class WebcamScript : MonoBehaviour
 {
     WebCamTexture webcamTexture;
-    public Renderer Saverenderer;
+    //public Renderer Saverenderer;
     public List<Texture2D> TexturesList;
     // Start is called before the first frame update
     void Start()
     {
         webcamTexture = new WebCamTexture();
-        Renderer renderer = GetComponent<Renderer>();
-        renderer.material.mainTexture = webcamTexture;
+        webcamTexture.deviceName = WebCamTexture.devices[1].name;
+
+        Debug.Log("device name : " + webcamTexture.deviceName);
+
+        //Renderer renderer = GetComponent<Renderer>();
+        //renderer.material.mainTexture = webcamTexture;
         webcamTexture.Play();
-    
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.JoystickButton0))
         {
             StartCoroutine(TakePhoto());
         }
@@ -40,11 +43,11 @@ public class WebcamScript : MonoBehaviour
         photo.SetPixels(webcamTexture.GetPixels());
         photo.Apply();
         TexturesList.Add(photo);
-        Saverenderer.material.mainTexture = photo;
+        //Saverenderer.material.mainTexture = photo;
         //Encode to a PNG
         byte[] bytes = photo.EncodeToPNG();
         //Write out the PNG. Of course you have to substitute your_path for something sensible
-        File.WriteAllBytes("C:\\Users\\leopo\\Desktop\\" + "photo.png", bytes);
+        //File.WriteAllBytes("C:\\Users\\leopo\\Desktop\\" + "photo.png", bytes);
         webcamTexture.Stop();
 
         yield return new WaitForSeconds(0.5f);

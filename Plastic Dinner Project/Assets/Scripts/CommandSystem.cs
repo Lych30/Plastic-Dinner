@@ -1,12 +1,14 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class CommandSystem : MonoBehaviour
 {
+    public Connection connection;
+        
     [Header("______GAME DESIGN________")]
     public List<Command> commandList = new List<Command>();                  // the list of commands that can appear on screen
     public List<Command> commandsToSend = new List<Command>();            // the list of acceptable commmands at the time
+    public FoodList foodList;
 
     [Header("______ DEBUG _______")]
     public bool bConditionsAreMet = false;                          // don't forget to click on game view or input won't be taken
@@ -23,7 +25,7 @@ public class CommandSystem : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.JoystickButton0) && isInGame)
         {
-            Debug.Log("Ding ! ");
+            //Debug.Log("Ding ! ");
 
             UpdateCurrentCommand();
             CheckConditions();
@@ -44,7 +46,17 @@ public class CommandSystem : MonoBehaviour
     // command is a list of food
     void UpdateCurrentCommand()
     {
-
+        currentCommand.Clear();
+        for(int i = 0; i < foodList.foods.Count; i++)
+        {
+            Food food = foodList.foods[i];
+            //Debug.Log(food.name);
+            // 
+            if (connection.message.Contains(food.name, System.StringComparison.CurrentCultureIgnoreCase))
+            {
+                currentCommand.Add(food);
+            }
+        }
     }
 
     // if current command is equal one of the command in list -> conditions are met -> Score ++ * combo multiplier
@@ -52,7 +64,7 @@ public class CommandSystem : MonoBehaviour
     {
         if(currentCommand.Count <= 0) 
         { 
-            Debug.LogError("Error Command sent is null or not recognized ! ");  
+            Debug.Log("Error : Command sent is null or not recognized ! ");  
             return; 
         }
 
@@ -75,12 +87,12 @@ public class CommandSystem : MonoBehaviour
         {
             for (int i = 0; i < commandsToSend.Count; i++)
             {
-                List<Food> commandParsing = commandsToSend[i].foods;
+                List<Food> commandFoodToParse = commandsToSend[i].foods;
                 bool hasFound = true;
-                for(int k =  0; k < commandParsing.Count; k++)
+                for(int k =  0; k < commandFoodToParse.Count; k++)
                 {
                     // is not equal to one of the command to send food
-                    if(!commandParsing.Contains(currentCommand[j]))
+                    if(!commandFoodToParse.Contains(currentCommand[j]))
                     {
                         hasFound = false;
                         break;
