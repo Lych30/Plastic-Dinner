@@ -4,21 +4,29 @@ using UnityEngine;
 public class CommandSystem : MonoBehaviour
 {
     public Connection connection;
+    public ScoreSystem scoreSystem;
     public MenuManager menu; 
 
     [Header("______GAME DESIGN________")]
-    public List<Command> commandList = new List<Command>();                  // the list of commands that can appear on screen
+    //public List<Command> commandList = new List<Command>();                  // the list of commands that can appear on screen
     public List<Command> commandsUnlocked = new List<Command>();            // the list of acceptable commmands at the time
+    //[HideInInspector]
+    public List<Command> commandsWaiting = new List<Command>();            // the list of commmands to complete at the time
     public FoodList foodList;
 
     [Header("______ DEBUG _______")]
     public bool bConditionsAreMet = false;                          // don't forget to click on game view or input won't be taken
     public List<Food> currentCommand = new List<Food>();                           // the command the player send
 
+
+    void Start()
+    {
+        AddCommandToDo();
+    }
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.JoystickButton0) && menu.isInGame)
+        if (Input.GetKeyDown(KeyCode.JoystickButton0) || Input.GetKeyDown(KeyCode.P)/* && menu.isInGame*/)
         {
             //Debug.Log("Ding ! ");
             bConditionsAreMet = false;
@@ -28,6 +36,10 @@ public class CommandSystem : MonoBehaviour
             if(bConditionsAreMet)
             {
                 // AddScore
+                string scoreGain = connection.message.Split('|')[1];
+                scoreGain = scoreGain.Remove(0,3);
+                float score = float.Parse(scoreGain);
+                scoreSystem.AddScore(score);
                 Debug.Log("Command is Success !");
             }
             else
@@ -41,6 +53,11 @@ public class CommandSystem : MonoBehaviour
     // get all the object on dish with Teachable Machine output
     // translate it to the current command
     // command is a list of food
+    void AddCommandToDo()
+    {
+        int randomCommand = Random.Range(0, commandsUnlocked.Count);
+        commandsWaiting.Add(commandsUnlocked[randomCommand]);
+    }
     void UpdateCurrentCommand()
     {
         currentCommand.Clear();
@@ -79,23 +96,20 @@ public class CommandSystem : MonoBehaviour
     // if current command is equal to one of the command To Send -> it's valid
     bool CheckCommand()
     {
-        for(int i = 0; i < currentCommand.Count; i++)
+        bool hasFound = true;
+        for (int i = 0; i < currentCommand.Count; i++)
         {
-            bool hasFound = true;
-            for(int j = 0; j < commandsUnlocked.Count; j++)
+            List<Food> commandsFood = commandsWaiting[0].foods;
+            if (!commandsFood.Contains(currentCommand[i]))
             {
-                List<Food> commandsFood = commandsUnlocked[i].foods;
-                if (!commandsFood.Contains(currentCommand[i]))
-                {
-                    hasFound = false;
-                    break;
-                }
+                hasFound = false;
+                break;
             }
 
-            if (hasFound)
-            {
-                return true;
-            }
+        }
+        if (hasFound)
+        {
+            return true;
         }
         //for (int i = 0; i < commandsUnlocked.Count; i++)
         //{
