@@ -12,10 +12,13 @@ public class MenuManager : MonoBehaviour
     public bool isInGame = false;
     public bool canReplay = false;
     public float secondsBeforeCanReplay = 2.0f;
-    public float secondsBeforePlay = 1.0f;
+    public float secondsBeforePlay = 2.0f;
 
+    Camera cam;
     private void Awake()
     {
+        cam = Camera.main;
+        
         isMenu = true;
         isGameOver = false;
         canReplay = false;
@@ -39,9 +42,8 @@ public class MenuManager : MonoBehaviour
 
     public void Play()
     {
-        isMenu = false;
-        menu.SetActive(false);
-        StartCoroutine(PlayDelay());
+        cam.GetComponent<Animator>().SetTrigger("CamTrigger");
+        StartCoroutine(PlayDelay());        
     }
 
     public void GameOver()
@@ -60,6 +62,8 @@ public class MenuManager : MonoBehaviour
     IEnumerator PlayDelay()
     {
         yield return new WaitForSeconds(secondsBeforePlay);
+        isMenu = false;
+        menu.SetActive(false);
         isInGame = true;
     }
 }
