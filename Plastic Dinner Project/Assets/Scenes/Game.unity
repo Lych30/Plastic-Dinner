@@ -780,7 +780,7 @@ PrefabInstance:
     - target: {fileID: 484361271051052906, guid: e806822dd3348f94293019a2ba2cb089,
         type: 3}
       propertyPath: commandList.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 484361271051052906, guid: e806822dd3348f94293019a2ba2cb089,
         type: 3}
@@ -796,8 +796,19 @@ PrefabInstance:
         type: 2}
     - target: {fileID: 484361271051052906, guid: e806822dd3348f94293019a2ba2cb089,
         type: 3}
+      propertyPath: commandList.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: b3c4f2b0336b1164e8c4fb6c0e05b84c,
+        type: 2}
+    - target: {fileID: 484361271051052906, guid: e806822dd3348f94293019a2ba2cb089,
+        type: 3}
       propertyPath: commandsToSend.Array.size
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 484361271051052906, guid: e806822dd3348f94293019a2ba2cb089,
+        type: 3}
+      propertyPath: commandsUnlocked.Array.size
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 484361271051052906, guid: e806822dd3348f94293019a2ba2cb089,
         type: 3}
@@ -810,6 +821,24 @@ PrefabInstance:
       propertyPath: commandsToSend.Array.data[1]
       value: 
       objectReference: {fileID: 11400000, guid: 671ee8f991c0e9540b83b17886cd907a,
+        type: 2}
+    - target: {fileID: 484361271051052906, guid: e806822dd3348f94293019a2ba2cb089,
+        type: 3}
+      propertyPath: commandsUnlocked.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 2142fbfb848949e43a284fd979feda84,
+        type: 2}
+    - target: {fileID: 484361271051052906, guid: e806822dd3348f94293019a2ba2cb089,
+        type: 3}
+      propertyPath: commandsUnlocked.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 671ee8f991c0e9540b83b17886cd907a,
+        type: 2}
+    - target: {fileID: 484361271051052906, guid: e806822dd3348f94293019a2ba2cb089,
+        type: 3}
+      propertyPath: commandsUnlocked.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: b3c4f2b0336b1164e8c4fb6c0e05b84c,
         type: 2}
     - target: {fileID: 4911525780149070667, guid: e806822dd3348f94293019a2ba2cb089,
         type: 3}

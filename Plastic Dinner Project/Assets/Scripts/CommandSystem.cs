@@ -7,7 +7,7 @@ public class CommandSystem : MonoBehaviour
         
     [Header("______GAME DESIGN________")]
     public List<Command> commandList = new List<Command>();                  // the list of commands that can appear on screen
-    public List<Command> commandsToSend = new List<Command>();            // the list of acceptable commmands at the time
+    public List<Command> commandsUnlocked = new List<Command>();            // the list of acceptable commmands at the time
     public FoodList foodList;
 
     [Header("______ DEBUG _______")]
@@ -26,17 +26,19 @@ public class CommandSystem : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.JoystickButton0) && isInGame)
         {
             //Debug.Log("Ding ! ");
-
+            bConditionsAreMet = false;
             UpdateCurrentCommand();
             CheckConditions();
 
             if(bConditionsAreMet)
             {
                 // AddScore
+                Debug.Log("Command is Success !");
             }
             else
             {
                 // Remove score or do nothing + redo combo
+                Debug.Log("Command is Failed !");
             }
         }
     }
@@ -82,29 +84,43 @@ public class CommandSystem : MonoBehaviour
     // if current command is equal to one of the command To Send -> it's valid
     bool CheckCommand()
     {
-        // if current command foods
-        for (int j = 0; j < currentCommand.Count; j++)
+        for(int i = 0; i < currentCommand.Count; i++)
         {
-            for (int i = 0; i < commandsToSend.Count; i++)
+            bool hasFound = true;
+            for(int j = 0; j < commandsUnlocked.Count; j++)
             {
-                List<Food> commandFoodToParse = commandsToSend[i].foods;
-                bool hasFound = true;
-                for(int k =  0; k < commandFoodToParse.Count; k++)
+                List<Food> commandsFood = commandsUnlocked[i].foods;
+                if (!commandsFood.Contains(currentCommand[i]))
                 {
-                    // is not equal to one of the command to send food
-                    if(!commandFoodToParse.Contains(currentCommand[j]))
-                    {
-                        hasFound = false;
-                        break;
-                    }
-                }
-
-                if(hasFound)
-                {
-                    return true;
+                    hasFound = false;
+                    break;
                 }
             }
+
+            if (hasFound)
+            {
+                return true;
+            }
         }
+        //for (int i = 0; i < commandsUnlocked.Count; i++)
+        //{
+        //    List<Food> commandsFoods = commandsUnlocked[i].foods;
+        //    bool hasFound = true;
+
+        //    for(int j = 0; j < currentCommand.Count; j++)
+        //    {
+        //        if(!commandsFoods.Contains(currentCommand[j]))
+        //        {
+        //            hasFound = false;
+        //            break;
+        //        }
+        //    }
+
+        //    if(hasFound)
+        //    {
+        //        return true;
+        //    }
+        //}
 
         return false;
     }

@@ -15,3 +15,4 @@ MonoBehaviour:
   foods:
   - {fileID: 11400000, guid: 20199b54468aaf2439e10911ebc34291, type: 2}
   - {fileID: 11400000, guid: d5687ba4a20ca9444b6ca02328f271bc, type: 2}
+  - {fileID: 11400000, guid: d5687ba4a20ca9444b6ca02328f271bc, type: 2}
