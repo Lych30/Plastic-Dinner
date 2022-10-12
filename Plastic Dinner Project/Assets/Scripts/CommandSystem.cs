@@ -18,10 +18,19 @@ public class CommandSystem : MonoBehaviour
     public bool bConditionsAreMet = false;                          // don't forget to click on game view or input won't be taken
     public List<Food> currentCommand = new List<Food>();                           // the command the player send
 
-
-    void Start()
+    public static CommandSystem Instance { get; private set; }
+    private void Awake()
     {
-        AddCommandToDo();
+        // If there is an instance, and it's not me, delete myself.
+
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+        }
     }
     // Update is called once per frame
     void Update()
@@ -53,7 +62,7 @@ public class CommandSystem : MonoBehaviour
     // get all the object on dish with Teachable Machine output
     // translate it to the current command
     // command is a list of food
-    void AddCommandToDo()
+    public void AddCommandToDo()
     {
         int randomCommand = Random.Range(0, commandsUnlocked.Count);
         commandsWaiting.Add(commandsUnlocked[randomCommand]);
