@@ -229,13 +229,13 @@ PrefabInstance:
     - target: {fileID: 484361271051052906, guid: e806822dd3348f94293019a2ba2cb089,
         type: 3}
       propertyPath: commandsUnlocked.Array.size
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 484361271051052906, guid: e806822dd3348f94293019a2ba2cb089,
         type: 3}
       propertyPath: commandsUnlocked.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: 2142fbfb848949e43a284fd979feda84,
+      objectReference: {fileID: 11400000, guid: c2290f961540eed41acdc4beeaeb8f65,
         type: 2}
     - target: {fileID: 484361271051052906, guid: e806822dd3348f94293019a2ba2cb089,
         type: 3}
@@ -1771,7 +1771,7 @@ MonoBehaviour:
   npcGameObject: {fileID: 5623181460722629399, guid: 186ad9bce1f645f4299f8162670586ee,
     type: 3}
   spawnTransform: {fileID: 551290835}
-  Exit: {fileID: 0}
+  Exit: {fileID: 1337879658}
   MaxNPCs: 4
 --- !u!1 &1673471866
 GameObject:
