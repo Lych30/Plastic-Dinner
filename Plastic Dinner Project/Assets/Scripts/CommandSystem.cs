@@ -11,12 +11,12 @@ public class CommandSystem : MonoBehaviour
     //public List<Command> commandList = new List<Command>();                  // the list of commands that can appear on screen
     public List<Command> commandsUnlocked = new List<Command>();            // the list of acceptable commmands at the time
     //[HideInInspector]
-    public List<Command> commandsWaiting = new List<Command>();            // the list of commmands to complete at the time
+    public List<Command> CustomerCommands = new List<Command>();            // the list of commmands to complete at the time
     public FoodList foodList;
 
     [Header("______ DEBUG _______")]
     public bool bConditionsAreMet = false;                          // don't forget to click on game view or input won't be taken
-    public List<Food> currentCommand = new List<Food>();                           // the command the player send
+    public List<Food> CameraCommand = new List<Food>();                           // the command the player send
 
     public static CommandSystem Instance { get; private set; }
     private void Awake()
@@ -65,11 +65,11 @@ public class CommandSystem : MonoBehaviour
     public void AddCommandToDo()
     {
         int randomCommand = Random.Range(0, commandsUnlocked.Count);
-        commandsWaiting.Add(commandsUnlocked[randomCommand]);
+        CustomerCommands.Add(commandsUnlocked[randomCommand]);
     }
     void UpdateCurrentCommand()
     {
-        currentCommand.Clear();
+        CameraCommand.Clear();
         for(int i = 0; i < foodList.foods.Count; i++)
         {
             Food food = foodList.foods[i];
@@ -77,7 +77,7 @@ public class CommandSystem : MonoBehaviour
             // 
             if (connection.message.Contains(food.name, System.StringComparison.CurrentCultureIgnoreCase))
             {
-                currentCommand.Add(food);
+                CameraCommand.Add(food);
             }
         }
     }
@@ -85,7 +85,7 @@ public class CommandSystem : MonoBehaviour
     // if current command is equal one of the command in list -> conditions are met -> Score ++ * combo multiplier
     void CheckConditions()
     {
-        if(currentCommand.Count <= 0) 
+        if(CameraCommand.Count <= 0) 
         { 
             Debug.Log("Command sent is null or not recognized ! ");  
             return; 
@@ -106,15 +106,16 @@ public class CommandSystem : MonoBehaviour
     bool CheckCommand()
     {
         bool hasFound = true;
-        for (int i = 0; i < currentCommand.Count; i++)
+
+        List<Food> commandsFood = CustomerCommands[0].foods;
+        foreach (Food food in commandsFood)
         {
-            List<Food> commandsFood = commandsWaiting[0].foods;
-            if (!commandsFood.Contains(currentCommand[i]))
+            Debug.Log(food);
+            if(!CameraCommand.Contains(food))
             {
                 hasFound = false;
                 break;
             }
-
         }
         if (hasFound)
         {
@@ -146,7 +147,7 @@ public class CommandSystem : MonoBehaviour
 
     void CustomerLeave()
     {
-        commandsWaiting.RemoveAt(0);
+        CustomerCommands.RemoveAt(0);
         NPCManager.Instance.NPC_List[0].Destination = NPCManager.Instance.Exit.position;
         Destroy(NPCManager.Instance.NPC_List[0].gameObject,5);
         NPCManager.Instance.NPC_List.RemoveAt(0);
