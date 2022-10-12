@@ -42,7 +42,7 @@ public class NPCManager : MonoBehaviour
         
     }
 
-    void SpawnNPC()
+    public void SpawnNPC()
     {
         GameObject SpawnedNPC = Instantiate(npcGameObject, spawnTransform.position, Quaternion.identity);
         NPCcontroler SpawnedNPCcontroler = SpawnedNPC.GetComponent<NPCcontroler>();

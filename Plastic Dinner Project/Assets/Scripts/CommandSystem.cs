@@ -147,9 +147,10 @@ public class CommandSystem : MonoBehaviour
 
     void CustomerLeave()
     {
+        Destroy(NPCManager.Instance.NPC_List[0].gameObject, 5);
         CustomerCommands.RemoveAt(0);
         NPCManager.Instance.NPC_List[0].Destination = NPCManager.Instance.Exit.position;
-        Destroy(NPCManager.Instance.NPC_List[0].gameObject,5);
         NPCManager.Instance.NPC_List.RemoveAt(0);
+        NPCManager.Instance.SpawnNPC();
     }
 }

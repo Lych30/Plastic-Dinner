@@ -19,7 +19,7 @@ public class NPCcontroler : MonoBehaviour
         {
             if (!orderTaken)
             {
-                NPCManager.Instance.NPC_List.Add(this);
+                
                 CommandSystem.Instance.AddCommandToDo();
                 orderTaken = true;
             }
