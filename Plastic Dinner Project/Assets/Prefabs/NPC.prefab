@@ -9798,7 +9798,7 @@ Transform:
   m_GameObject: {fileID: 5623181460722629399}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1.85, z: 11.83}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5623181460813564762}
@@ -9821,6 +9821,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Destination: {x: 0, y: 0, z: 0}
   speed: 5
+  tolerance: 2.2
   Fireworks: {fileID: 6691911880341003487}
   Nope: {fileID: 2100544361901235256}
   animator: {fileID: 5019792022544667174}

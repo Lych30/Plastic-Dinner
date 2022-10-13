@@ -7,6 +7,7 @@ public class NPCcontroler : MonoBehaviour
     public Vector3 Destination;
     private Rigidbody rb;
     public float speed;
+    public float tolerance;
     private bool orderTaken = false;
     public ParticleSystem Fireworks;
     public ParticleSystem Nope;
@@ -22,7 +23,7 @@ public class NPCcontroler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ((Destination - transform.position).magnitude < 2f)
+        if ((Destination - transform.position).magnitude < tolerance)
         {
             if (!orderTaken)
             {
