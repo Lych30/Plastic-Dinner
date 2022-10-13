@@ -1,12 +1,14 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
-
+using TMPro;
 public class MenuManager : MonoBehaviour
 {
     public GameObject gameOver;
     public GameObject menu;
     public GameObject playerUI;
+    public TMP_Text scoreText;
+    public ScoreSystem scoreSystem;
 
     public bool isMenu = true;
     public bool isGameOver = false;
@@ -53,6 +55,7 @@ public class MenuManager : MonoBehaviour
         isGameOver = true;
         gameOver.SetActive(true);
         playerUI.SetActive(false);
+        scoreText.text = scoreSystem.Score.ToString();
         StartCoroutine(ReplayDelay());
     }
 

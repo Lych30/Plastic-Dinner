@@ -12712,7 +12712,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Game Over
+  m_text: SCORE
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9a589cffefeb13b498d5e987dfdc16c5, type: 2}
   m_sharedMaterial: {fileID: -5298799408078573148, guid: 9a589cffefeb13b498d5e987dfdc16c5,
@@ -12901,6 +12901,8 @@ MonoBehaviour:
   gameOver: {fileID: 961407415}
   menu: {fileID: 510555493}
   playerUI: {fileID: 6799427590135552118}
+  scoreText: {fileID: 6935090600880298164}
+  scoreSystem: {fileID: 1703856823}
   isMenu: 1
   isGameOver: 0
   isInGame: 0
@@ -13029,7 +13031,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Score : '
+  m_text: 9999999999999999
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c8f2ab37be6354046bfaa297efb03b5d, type: 2}
   m_sharedMaterial: {fileID: -8924899192842026500, guid: c8f2ab37be6354046bfaa297efb03b5d,
@@ -13057,12 +13059,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 80
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_fontSizeMax: 80
   m_fontStyle: 17
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
