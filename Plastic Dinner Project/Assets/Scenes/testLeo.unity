@@ -1473,6 +1473,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3552740527485419297, guid: 186ad9bce1f645f4299f8162670586ee,
+        type: 3}
+      propertyPath: InitialModule.startSpeed.minScalar
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3552740527485419297, guid: 186ad9bce1f645f4299f8162670586ee,
+        type: 3}
+      propertyPath: InitialModule.startSpeed.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5623181460722629398, guid: 186ad9bce1f645f4299f8162670586ee,
         type: 3}
       propertyPath: m_RootOrder
@@ -1533,6 +1543,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC
       objectReference: {fileID: 0}
+    - target: {fileID: 5623181460722629399, guid: 186ad9bce1f645f4299f8162670586ee,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8504965121201095955, guid: 186ad9bce1f645f4299f8162670586ee,
+        type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1347094371}
     - target: {fileID: 8504965121201095955, guid: 186ad9bce1f645f4299f8162670586ee,
         type: 3}
       propertyPath: Fireworks
@@ -1674,6 +1694,12 @@ Transform:
   m_Father: {fileID: 1571882128}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1347094371 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5019792022544667174, guid: 186ad9bce1f645f4299f8162670586ee,
+    type: 3}
+  m_PrefabInstance: {fileID: 1073842496}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1571882127
 GameObject:
   m_ObjectHideFlags: 0

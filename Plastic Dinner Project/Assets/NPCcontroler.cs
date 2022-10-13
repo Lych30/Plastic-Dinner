@@ -10,6 +10,7 @@ public class NPCcontroler : MonoBehaviour
     private bool orderTaken = false;
     public ParticleSystem Fireworks;
     public ParticleSystem Nope;
+    public Animator animator;
     [Header("_______DEBUG________")]
     public NPCManager npcManager;
     void Start()
@@ -27,7 +28,7 @@ public class NPCcontroler : MonoBehaviour
             {
                 orderTaken = true;
                 npcManager.TakeOrder();
-                
+                animator.Play("waiting");
             }
         }
         else
@@ -45,5 +46,21 @@ public class NPCcontroler : MonoBehaviour
     public void NopeParticles()
     {
         Nope.Play();
+    }
+
+    public void TriggerAnim(string trigger, float delay)
+    {
+        StartCoroutine(TriggerAnimDelay(trigger,delay));
+    }
+    public void TriggerAnim(string trigger)
+    {
+        animator.SetTrigger(trigger);
+        
+    }
+    IEnumerator TriggerAnimDelay(string trigger, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        animator.SetTrigger(trigger);
+        Debug.Log(trigger);
     }
 }
