@@ -65,6 +65,7 @@ public class OrderTimer : MonoBehaviour
     private void Begin (int second)
     {
         remaningDuration = second;
+        NPCManager.Instance.NPC_List[NPCManager.Instance.NPC_List.Count - 1].TriggerAnim("TriggerAngry",orderDuration/4);
         StartCoroutine(UpdateTimer());
     }
 
@@ -86,7 +87,7 @@ public class OrderTimer : MonoBehaviour
         {
             image.gameObject.SetActive(false);
         }
-
+        
             CommandSystem.Instance.CustomerLeave();
 
         command = null;

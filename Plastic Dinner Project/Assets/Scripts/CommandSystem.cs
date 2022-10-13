@@ -50,6 +50,8 @@ public class CommandSystem : MonoBehaviour
             {
                 // AddScore
                 NPCManager.Instance.NPC_List[0].TriggerFireworks();
+                NPCManager.Instance.NPC_List[0].StopAllCoroutines();
+                NPCManager.Instance.NPC_List[0].TriggerAnim("TriggerHappy");
                 string scoreGain = connection.message.Split('|')[1];
                 scoreGain = scoreGain.Remove(0,3);
                 float score = float.Parse(scoreGain);
