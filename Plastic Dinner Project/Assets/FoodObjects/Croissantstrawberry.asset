@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c551625d14bbe4744bf473198b527c86, type: 3}
-  m_Name: Pieapple
+  m_Name: Croissantstrawberry
   m_EditorClassIdentifier: 
   foods:
-  - {fileID: 11400000, guid: 99a8605a8d59625488d7d4145f8d345a, type: 2}
-  - {fileID: 11400000, guid: f9d218c6988f37f4ca6e058171bbe6f7, type: 2}
+  - {fileID: 11400000, guid: eaeb9c5e1d474ab42b3fc83e69b2df7e, type: 2}
+  - {fileID: 11400000, guid: cd957a408d589fe43ba2761e40c6b4e1, type: 2}

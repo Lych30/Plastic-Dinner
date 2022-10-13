@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Pizzacorn
   m_EditorClassIdentifier: 
   foods:
-  - {fileID: 11400000, guid: 51e1a2950ab34794fb627c97754a51ef, type: 2}
-  - {fileID: 11400000, guid: a595d559a5bf761489e573c89be31655, type: 2}
+  - {fileID: 11400000, guid: 814abcb42ed9000419c77f4039f10aa5, type: 2}
+  - {fileID: 11400000, guid: 9628c2999c0754145be71155fe926981, type: 2}

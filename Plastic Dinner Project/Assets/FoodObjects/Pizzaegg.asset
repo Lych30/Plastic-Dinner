@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Pizzaegg
   m_EditorClassIdentifier: 
   foods:
-  - {fileID: 11400000, guid: ba1dba9034883444fa50a53dec4e4f02, type: 2}
-  - {fileID: 11400000, guid: de62ed9deee9ab049a8c89b81e50d568, type: 2}
+  - {fileID: 11400000, guid: 814abcb42ed9000419c77f4039f10aa5, type: 2}
+  - {fileID: 11400000, guid: e4e044d37cdbb9044a0b54a1a92c215e, type: 2}

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Croissantorange
   m_EditorClassIdentifier: 
   foods:
-  - {fileID: 11400000, guid: 56b46a7e757deb943b564211be7e08dc, type: 2}
-  - {fileID: 11400000, guid: ba1dba9034883444fa50a53dec4e4f02, type: 2}
+  - {fileID: 11400000, guid: eaeb9c5e1d474ab42b3fc83e69b2df7e, type: 2}
+  - {fileID: 11400000, guid: 093ab6bfd2ae5844f842517d204461f0, type: 2}

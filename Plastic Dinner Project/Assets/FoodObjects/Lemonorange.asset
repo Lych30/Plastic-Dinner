@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Lemonorange
   m_EditorClassIdentifier: 
   foods:
-  - {fileID: 11400000, guid: ba1dba9034883444fa50a53dec4e4f02, type: 2}
-  - {fileID: 11400000, guid: de62ed9deee9ab049a8c89b81e50d568, type: 2}
+  - {fileID: 11400000, guid: dd2d55444bde898448a30dab5f8d4f6d, type: 2}
+  - {fileID: 11400000, guid: 093ab6bfd2ae5844f842517d204461f0, type: 2}
