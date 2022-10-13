@@ -42,6 +42,11 @@ public class MenuManager : MonoBehaviour
             isInGame = false;
             SceneManager.LoadScene("Game");
         }
+
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
     }
 
     public void Play()
