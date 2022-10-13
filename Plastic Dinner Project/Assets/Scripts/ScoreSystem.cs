@@ -6,7 +6,7 @@ using TMPro;
 public class ScoreSystem : MonoBehaviour
 {
     public int Score = 0;
-    public int Multiplier = 1;
+    public float Multiplier = 1;
     public TextMeshProUGUI TextScore;
 
     // Start is called before the first frame update
@@ -24,5 +24,14 @@ public class ScoreSystem : MonoBehaviour
     {
         Score += (int)(Addscore * Multiplier);
         UpdateScore();
+    }
+
+    public void AddMultplier(float add)
+    {
+        Multiplier += add;
+        if(Multiplier <= 0.6f)
+        {
+            Multiplier = 0.6f;
+        }
     }
 }
