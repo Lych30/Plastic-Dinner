@@ -4,49 +4,80 @@ using UnityEngine;
 public class CommandSystem : MonoBehaviour
 {
     public Connection connection;
-        
+    public ScoreSystem scoreSystem;
+    public MenuManager menu; 
+    public OrdersUI ordersUI;
+
     [Header("______GAME DESIGN________")]
-    public List<Command> commandList = new List<Command>();                  // the list of commands that can appear on screen
-    public List<Command> commandsToSend = new List<Command>();            // the list of acceptable commmands at the time
+    //public List<Command> commandList = new List<Command>();               // the list of commands that can appear on screen
+    public List<Command> commandsUnlocked = new List<Command>();            // the list of acceptable commmands at the time
+    //[HideInInspector]
+    public List<Command> CustomerCommands = new List<Command>();            // the list of commmands to complete at the time
     public FoodList foodList;
-
+    
     [Header("______ DEBUG _______")]
-    public bool bConditionsAreMet = false;                          // don't forget to click on game view or input won't be taken
-    public List<Food> currentCommand = new List<Food>();                           // the command the player send
+    public bool isCameraCommandCorrect = false;                          // don't forget to click on game view or input won't be taken
+    public List<Food> CameraCommand = new List<Food>();                           // the command the player send
+    public Command commandFound = null;
 
-    public bool isInGame = true;
+    public static CommandSystem Instance { get; private set; }
     private void Awake()
     {
-        isInGame = true;
+        // If there is an instance, and it's not me, delete myself.
+
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+        }
     }
+
     // Update is called once per frame
     void Update()
     {
-
-        if (Input.GetKeyDown(KeyCode.JoystickButton0) && isInGame)
+        if ((Input.GetKeyDown(KeyCode.JoystickButton0) || Input.GetKeyDown(KeyCode.P)) && menu.isInGame)
         {
             //Debug.Log("Ding ! ");
+            isCameraCommandCorrect = false;
+            UpdateCameraCommand();
+            CheckCameraCommand();
 
-            UpdateCurrentCommand();
-            CheckConditions();
-
-            if(bConditionsAreMet)
+            if(isCameraCommandCorrect)
             {
                 // AddScore
+                string scoreGain = connection.message.Split('|')[1];
+                scoreGain = scoreGain.Remove(0,3);
+                float score = float.Parse(scoreGain);
+                scoreSystem.AddScore(score);
+                ordersUI.DestroyOrder(commandFound);
+
+                Debug.Log("Command is Success !");
             }
             else
             {
-                // Remove score or do nothing + redo combo
+                // Reset combo
+                Debug.Log("Command is Failed !");
             }
         }
+    }
+
+    public Command AddCommandToDo()
+    {
+        int randomCommand = Random.Range(0, commandsUnlocked.Count);
+        Command newCommand = commandsUnlocked[randomCommand];
+        CustomerCommands.Add(newCommand);
+        return newCommand;
     }
 
     // get all the object on dish with Teachable Machine output
     // translate it to the current command
     // command is a list of food
-    void UpdateCurrentCommand()
+    void UpdateCameraCommand()
     {
-        currentCommand.Clear();
+        CameraCommand.Clear();
         for(int i = 0; i < foodList.foods.Count; i++)
         {
             Food food = foodList.foods[i];
@@ -54,58 +85,74 @@ public class CommandSystem : MonoBehaviour
             // 
             if (connection.message.Contains(food.name, System.StringComparison.CurrentCultureIgnoreCase))
             {
-                currentCommand.Add(food);
+                CameraCommand.Add(food);
             }
         }
     }
 
     // if current command is equal one of the command in list -> conditions are met -> Score ++ * combo multiplier
-    void CheckConditions()
+    void CheckCameraCommand()
     {
-        if(currentCommand.Count <= 0) 
+        if(CameraCommand.Count <= 0) 
         { 
-            Debug.Log("Error : Command sent is null or not recognized ! ");  
+            Debug.Log("Command sent is null or not recognized ! ");  
             return; 
         }
 
         // it might take the object in list in order so don't forget to check individually each food
         if(CheckCommand())
         {
-            bConditionsAreMet = true;
+            isCameraCommandCorrect = true;
         }
         else
         {
-            bConditionsAreMet = false;
+            isCameraCommandCorrect = false;
         }
     }
 
     // if current command is equal to one of the command To Send -> it's valid
     bool CheckCommand()
     {
-        // if current command foods
-        for (int j = 0; j < currentCommand.Count; j++)
+        // you have to check each customer commands and not just the first one
+        foreach(Command customerCommand in CustomerCommands)
         {
-            for (int i = 0; i < commandsToSend.Count; i++)
+            bool hasFound = true;
+            List<Food> customerOrder = customerCommand.foods;
+            foreach (Food food in customerOrder)
             {
-                List<Food> commandFoodToParse = commandsToSend[i].foods;
-                bool hasFound = true;
-                for(int k =  0; k < commandFoodToParse.Count; k++)
+                Debug.Log(food);
+                if(CameraCommand.Count != customerOrder.Count)
                 {
-                    // is not equal to one of the command to send food
-                    if(!commandFoodToParse.Contains(currentCommand[j]))
-                    {
-                        hasFound = false;
-                        break;
-                    }
+                    hasFound = false;
+                    break;
                 }
 
-                if(hasFound)
+                if (!CameraCommand.Contains(food))
                 {
-                    return true;
+                    hasFound = false;
+                    break;
                 }
+            }
+
+            if (hasFound)
+            {
+                commandFound = customerCommand;
+                CustomerLeave();
+                return true;
             }
         }
 
+        // if order has failed it's fine give them another chance
+        //CustomerLeave();
         return false;
+    }
+
+    void CustomerLeave()
+    {
+        CustomerCommands.Remove(commandFound);
+        Destroy(NPCManager.Instance.NPC_List[0].gameObject, 5);
+        NPCManager.Instance.NPC_List[0].Destination = NPCManager.Instance.Exit.position;
+        NPCManager.Instance.NPC_List.RemoveAt(0);
+        NPCManager.Instance.SpawnNPC();
     }
 }

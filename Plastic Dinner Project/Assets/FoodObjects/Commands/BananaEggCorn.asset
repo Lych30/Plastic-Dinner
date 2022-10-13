@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c551625d14bbe4744bf473198b527c86, type: 3}
+  m_Name: BananaEggCorn
+  m_EditorClassIdentifier: 
+  foods:
+<<<<<<< HEAD:Plastic Dinner Project/Assets/FoodObjects/SteakFrite.asset
+  - {fileID: 11400000, guid: 20199b54468aaf2439e10911ebc34291, type: 2}
+  - {fileID: 11400000, guid: c2b998a4027b2a84e87d95c325707179, type: 2}
+=======
+  - {fileID: 11400000, guid: 1234c93687ba435499f060f0a347f48d, type: 2}
+  - {fileID: 11400000, guid: 163ce818008945b4db4b46c75a5b7d5a, type: 2}
+  - {fileID: 11400000, guid: e940194beb5ee7049b085e0556e5b4cd, type: 2}
+>>>>>>> main:Plastic Dinner Project/Assets/FoodObjects/Commands/BananaEggCorn.asset

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: FoodList
   m_EditorClassIdentifier: 
   foods:
+<<<<<<< HEAD
   - {fileID: 11400000, guid: f9d218c6988f37f4ca6e058171bbe6f7, type: 2}
   - {fileID: 11400000, guid: 00a356f37f3a9e94ea937779f7e8ada7, type: 2}
   - {fileID: 11400000, guid: de62ed9deee9ab049a8c89b81e50d568, type: 2}
@@ -53,3 +54,17 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ebd1692998b640d418d3364845ba914d, type: 2}
   - {fileID: 11400000, guid: b78da452599a5054e9726d7e4f5c606e, type: 2}
   - {fileID: 11400000, guid: bbaa78b5a6083a346b4b376fa8f9f5a6, type: 2}
+=======
+  - {fileID: 11400000, guid: 1234c93687ba435499f060f0a347f48d, type: 2}
+  - {fileID: 11400000, guid: d04131923c4832f4790d858d9f499ace, type: 2}
+  - {fileID: 11400000, guid: e940194beb5ee7049b085e0556e5b4cd, type: 2}
+  - {fileID: 11400000, guid: bedde9da81d23734a8fda2faa4bd2a67, type: 2}
+  - {fileID: 11400000, guid: 163ce818008945b4db4b46c75a5b7d5a, type: 2}
+  - {fileID: 11400000, guid: 1b3dc8c544d615048bb7350c1b0fe123, type: 2}
+  - {fileID: 11400000, guid: 0d7c09c32ee7aac4196d72be84089fe9, type: 2}
+  - {fileID: 11400000, guid: 0d9229a5f5186f749b71669bfa18f72f, type: 2}
+  - {fileID: 11400000, guid: 8f972e863dc2edd48ba4063810032180, type: 2}
+  - {fileID: 11400000, guid: cbd179bd5eba79e48bc418efa19796ca, type: 2}
+  - {fileID: 11400000, guid: 1f646a94633118f41b667d0ef6ef1fc0, type: 2}
+  - {fileID: 11400000, guid: f3218ca50a649854bbcd329e911315b4, type: 2}
+>>>>>>> main

@@ -12,5 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb76604b5fc0a1846be9b2d954c6cb7a, type: 3}
   m_Name: Egg
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   foodCategory:
   - {fileID: 11400000, guid: 47607b6f2d85d5543a27730bf506c1b6, type: 2}
+=======
+  sprite: {fileID: 21300000, guid: 00b93b238d938fe4bb10aaacb18e1bc2, type: 3}
+  foodCategory: []
+>>>>>>> main
