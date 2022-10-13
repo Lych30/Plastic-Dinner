@@ -8,10 +8,15 @@ public class NPCcontroler : MonoBehaviour
     private Rigidbody rb;
     public float speed;
     private bool orderTaken = false;
+
+    [Header("_______DEBUG________")]
+    public NPCManager npcManager;
     void Start()
     {
+        npcManager = NPCManager.Instance;
         rb = GetComponent<Rigidbody>();
     }
+
     // Update is called once per frame
     void Update()
     {
@@ -19,18 +24,15 @@ public class NPCcontroler : MonoBehaviour
         {
             if (!orderTaken)
             {
-                // TO DO : see NPCManager
-                CommandSystem.Instance.AddCommandToDo();
                 orderTaken = true;
+                npcManager.TakeOrder();
+                
             }
         }
         else
         {
             var dir = (Destination - transform.position).normalized;
-            transform.position += dir*speed*Time.deltaTime;
+            transform.position += dir * speed * Time.deltaTime;
         }
-
     }
-
-    
 }

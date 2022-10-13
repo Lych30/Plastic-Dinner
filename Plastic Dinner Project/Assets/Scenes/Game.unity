@@ -3329,7 +3329,7 @@ MonoBehaviour:
   - {fileID: 2100906090}
   - {fileID: 1379706928}
   - {fileID: 1708240041}
-  timeBeforeNextOrder: 3
+  timeBeforeNextOrder: 5
   waitBeforeStartTimer: 1
   delay: 1
   timer: 0
@@ -8069,12 +8069,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae6e5e5abb571024cbecf370a508d3b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ordersUI: {fileID: 585562493}
   NPC_List: []
   npcGameObject: {fileID: 5623181460722629399, guid: 186ad9bce1f645f4299f8162670586ee,
     type: 3}
   spawnTransform: {fileID: 551290835}
   Exit: {fileID: 1337879658}
-  MaxNPCs: 4
+  MaxNPCs: 8
 --- !u!1 &1575912261
 GameObject:
   m_ObjectHideFlags: 0

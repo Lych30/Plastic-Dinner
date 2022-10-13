@@ -38,7 +38,7 @@ public class CommandSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ((Input.GetKeyDown(KeyCode.JoystickButton0) || Input.GetKeyDown(KeyCode.P)) && menu.isInGame)
+        if ((Input.GetKeyDown(KeyCode.JoystickButton0) || Input.GetKeyDown(KeyCode.Space)) && menu.isInGame)
         {
             //Debug.Log("Ding ! ");
             isCameraCommandCorrect = false;
