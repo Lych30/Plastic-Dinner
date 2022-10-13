@@ -25,7 +25,7 @@ public class OrdersUI : MonoBehaviour
     void Start()
     {
         timer = timeBeforeNextOrder;
-        CreateOrder();
+        NPCManager.Instance.SpawnNPC();
     }
 
     // Update is called once per frame
@@ -43,7 +43,7 @@ public class OrdersUI : MonoBehaviour
 
         if (timer > timeBeforeNextOrder)
         {
-            CreateOrder();
+            NPCManager.Instance.SpawnNPC();
         }
         timer += Time.deltaTime;
     }

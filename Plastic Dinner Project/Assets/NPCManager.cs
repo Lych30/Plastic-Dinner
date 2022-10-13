@@ -44,20 +44,22 @@ public class NPCManager : MonoBehaviour
         //                  TakeOrder
         //                      -> in CommandSystem -> call AddCommandToDo
         // I think the second solution is better because more logical
-        if (NPC_List.Count < MaxNPCs)
-            for (int i = NPC_List.Count; i < MaxNPCs; i++)
-            {
-                SpawnNPC();
-            }
+        
+            
+
         
     }
 
     public void SpawnNPC()
     {
-        GameObject SpawnedNPC = Instantiate(npcGameObject, spawnTransform.position, Quaternion.identity);
-        NPCcontroler SpawnedNPCcontroler = SpawnedNPC.GetComponent<NPCcontroler>();
-        SpawnedNPCcontroler.Destination = SetDestination();
-        NPC_List.Add(SpawnedNPCcontroler);
+        if (NPC_List.Count < MaxNPCs)
+        {
+            GameObject SpawnedNPC = Instantiate(npcGameObject, spawnTransform.position, Quaternion.identity);
+            NPCcontroler SpawnedNPCcontroler = SpawnedNPC.GetComponent<NPCcontroler>();
+            SpawnedNPCcontroler.Destination = SetDestination();
+            NPC_List.Add(SpawnedNPCcontroler);
+        }
+
     }
 
     Vector3 SetDestination()
