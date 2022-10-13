@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Pieblackberry
   m_EditorClassIdentifier: 
   foods:
-  - {fileID: 11400000, guid: 99a8605a8d59625488d7d4145f8d345a, type: 2}
-  - {fileID: 11400000, guid: 32f71592f10f2344cbee700ce7f58a95, type: 2}
+  - {fileID: 11400000, guid: 10297a9fb7a9fbe42b32be2511b924ce, type: 2}
+  - {fileID: 11400000, guid: 32670e9261a97e742a8220a89314147b, type: 2}

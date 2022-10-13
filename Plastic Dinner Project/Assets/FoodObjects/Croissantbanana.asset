@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Croissantbanana
   m_EditorClassIdentifier: 
   foods:
-  - {fileID: 11400000, guid: 56b46a7e757deb943b564211be7e08dc, type: 2}
-  - {fileID: 11400000, guid: 00a356f37f3a9e94ea937779f7e8ada7, type: 2}
+  - {fileID: 11400000, guid: eaeb9c5e1d474ab42b3fc83e69b2df7e, type: 2}
+  - {fileID: 11400000, guid: c8b861b2ffcc61249bb2647b8043b03e, type: 2}

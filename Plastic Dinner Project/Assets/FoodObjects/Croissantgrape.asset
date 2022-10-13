@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Croissantgrape
   m_EditorClassIdentifier: 
   foods:
-  - {fileID: 11400000, guid: 56b46a7e757deb943b564211be7e08dc, type: 2}
-  - {fileID: 11400000, guid: 4642dafb786e102499c7a518643958f0, type: 2}
+  - {fileID: 11400000, guid: eaeb9c5e1d474ab42b3fc83e69b2df7e, type: 2}
+  - {fileID: 11400000, guid: a6b95c0c772825841948d88d052a1adc, type: 2}
