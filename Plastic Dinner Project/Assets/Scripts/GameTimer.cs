@@ -67,7 +67,7 @@ public class GameTimer : MonoBehaviour
 
         if(timer <= 15 && _isNotPlayedYet)
         {
-            //SoundManager.Instance.PlaySound("Clock");
+            SoundManager.Instance.PlaySound("Clock");
             _isNotPlayedYet = false;
         }
 

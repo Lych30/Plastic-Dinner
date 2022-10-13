@@ -66,8 +66,8 @@ public class MenuManager : MonoBehaviour
     public void Play()
     {
         cam.GetComponent<Animator>().SetTrigger("CamTrigger");
-        //SoundManager.Instance.PlaySound("BackgroundKitchen");
-        //SoundManager.Instance.PlaySound("BackgroundRoom");
+        SoundManager.Instance.PlaySound("BackgroundKitchen");
+        SoundManager.Instance.PlaySound("BackgroundRoom");
         StartCoroutine(PlayDelay());        
     }
 
@@ -76,10 +76,10 @@ public class MenuManager : MonoBehaviour
         isGameOver = true;
         gameOver.SetActive(true);
         playerUI.SetActive(false);
-        //SoundManager.Instance.PlaySound("HappyEndgame");
-        //SoundManager.Instance.StopSound("BackgroundKitchen"); 
-        //SoundManager.Instance.StopSound("BackgroundRoom");
-        //SoundManager.Instance.StopSound("Clock");
+        SoundManager.Instance.PlaySound("HappyEndgame");
+        SoundManager.Instance.StopSound("BackgroundKitchen"); 
+        SoundManager.Instance.StopSound("BackgroundRoom");
+        SoundManager.Instance.StopSound("Clock");
         scoreText.text = scoreSystem.Score.ToString();
         StartCoroutine(ReplayDelay());
     }

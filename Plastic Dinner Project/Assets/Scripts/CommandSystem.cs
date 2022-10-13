@@ -44,7 +44,7 @@ public class CommandSystem : MonoBehaviour
             isCameraCommandCorrect = false;
             UpdateCameraCommand();
             CheckCameraCommand();
-            //SoundManager.Instance.PlaySound("Ding");
+            SoundManager.Instance.PlaySound("Ding");
 
             if(isCameraCommandCorrect)
             {
