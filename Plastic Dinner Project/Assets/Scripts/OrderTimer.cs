@@ -5,31 +5,53 @@ using UnityEngine.UI;
 
 public class OrderTimer : MonoBehaviour
 {
-    [SerializeField] private Image uiFiller;
-    private GameTimer gameTimer;
+    public int[] durations = new int[4];
 
-    private int orderDuration;
-    private int remaningDuration;
-    private float tColor;
+    public List<Image> foodImages = new List<Image>();
+    public Command command = null;
+    
+    [Header("_________ DEBUG __________")]
+    [SerializeField] private Image uiFiller;
+    [SerializeField] private GameTimer gameTimer;
+    
+    [SerializeField] private int orderDuration;
+    [SerializeField] private int remaningDuration;
+    [SerializeField] private float tColor;
+
+    private void Awake()
+    {
+        gameTimer = transform.parent.parent.GetComponent<GameTimer>();
+
+        foreach(Image image in foodImages)
+        {
+            image.gameObject.SetActive(false);
+        }
+    }
 
     void Start()
     {
-        gameTimer = transform.parent.parent.GetComponent<GameTimer>();
+        //ResetOrderDuration();
+    }
+
+    public void ResetOrderDuration()
+    {
+        Debug.Log("Order has arrive !");
+
         if (gameTimer.timer > gameTimer.timerDuration * (3 / 4))
         {
-            orderDuration = 10;
+            orderDuration = durations[0];
         }
         else if (gameTimer.timer > gameTimer.timerDuration * (2 / 4))
         {
-            orderDuration = 8;
+            orderDuration = durations[1];
         }
         else if (gameTimer.timer > gameTimer.timerDuration * (1 / 4))
         {
-            orderDuration = 6;
+            orderDuration = durations[2];
         }
         else
         {
-            orderDuration = 4;
+            orderDuration = durations[3];
         }
         Begin(orderDuration);
     }
@@ -57,8 +79,14 @@ public class OrderTimer : MonoBehaviour
         OnEnd();
     }
 
-    private void OnEnd()
+    public void OnEnd()
     {
-        //Call when timer expires
+        //Call when timer expires or command is success
+        foreach (Image image in foodImages)
+        {
+            image.gameObject.SetActive(false);
+        }
+        command = null;
+        gameObject.SetActive(false);
     }
 }

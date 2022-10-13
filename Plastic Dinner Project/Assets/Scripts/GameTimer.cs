@@ -5,6 +5,9 @@ using TMPro;
 
 public class GameTimer : MonoBehaviour
 {
+    public bool waitBeforeStartTimer = true;
+    public float delay = 1.0f;
+
     [SerializeField]
     public float timerDuration;
     
@@ -41,8 +44,23 @@ public class GameTimer : MonoBehaviour
         SetTextDisplay(true);
     }
 
+    private void Start()
+    {
+        timer = timerDuration;
+        UpdateTimerDisplay(timer);
+    }
     void Update()
     {
+        if(waitBeforeStartTimer)
+        {
+            delay -= Time.deltaTime;
+            if(delay <= 0)
+            {
+                waitBeforeStartTimer = false;
+            }
+            return;
+        }
+
         if (countDown && timer > 0)
         {
             timer -= Time.deltaTime;

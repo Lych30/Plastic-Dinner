@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb76604b5fc0a1846be9b2d954c6cb7a, type: 3}
   m_Name: Egg
   m_EditorClassIdentifier: 
-  foodCategory:
-  - {fileID: 11400000, guid: 5731b2e9afd0dde4795c60e3cfec66ac, type: 2}
+  sprite: {fileID: 21300000, guid: 00b93b238d938fe4bb10aaacb18e1bc2, type: 3}
+  foodCategory: []

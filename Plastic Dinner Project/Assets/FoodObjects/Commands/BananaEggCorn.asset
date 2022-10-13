@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c551625d14bbe4744bf473198b527c86, type: 3}
-  m_Name: SteakFrite
+  m_Name: BananaEggCorn
   m_EditorClassIdentifier: 
   foods:
-  - {fileID: 11400000, guid: 20199b54468aaf2439e10911ebc34291, type: 2}
-  - {fileID: 11400000, guid: d5687ba4a20ca9444b6ca02328f271bc, type: 2}
-  - {fileID: 11400000, guid: d5687ba4a20ca9444b6ca02328f271bc, type: 2}
+  - {fileID: 11400000, guid: 1234c93687ba435499f060f0a347f48d, type: 2}
+  - {fileID: 11400000, guid: 163ce818008945b4db4b46c75a5b7d5a, type: 2}
+  - {fileID: 11400000, guid: e940194beb5ee7049b085e0556e5b4cd, type: 2}

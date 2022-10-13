@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bb76604b5fc0a1846be9b2d954c6cb7a, type: 3}
-  m_Name: Salmon
+  m_Name: Lemon
   m_EditorClassIdentifier: 
-  foodCategory:
-  - {fileID: 11400000, guid: 3ba616665377c0b40b98f54c91907a56, type: 2}
+  sprite: {fileID: 21300000, guid: 82f44f25d4dc2654c9eeb2f0ecbdaaa5, type: 3}
+  foodCategory: []

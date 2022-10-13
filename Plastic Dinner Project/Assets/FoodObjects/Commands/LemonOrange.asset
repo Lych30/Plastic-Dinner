@@ -9,8 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb76604b5fc0a1846be9b2d954c6cb7a, type: 3}
-  m_Name: Potato
+  m_Script: {fileID: 11500000, guid: c551625d14bbe4744bf473198b527c86, type: 3}
+  m_Name: LemonOrange
   m_EditorClassIdentifier: 
-  foodCategory:
-  - {fileID: 11400000, guid: e681a511926101f49ad83013dd6994f7, type: 2}
+  foods:
+  - {fileID: 11400000, guid: 0d7c09c32ee7aac4196d72be84089fe9, type: 2}
+  - {fileID: 11400000, guid: 0d9229a5f5186f749b71669bfa18f72f, type: 2}

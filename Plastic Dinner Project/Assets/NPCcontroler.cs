@@ -19,11 +19,10 @@ public class NPCcontroler : MonoBehaviour
         {
             if (!orderTaken)
             {
-                
+                // TO DO : see NPCManager
                 CommandSystem.Instance.AddCommandToDo();
                 orderTaken = true;
             }
-
         }
         else
         {

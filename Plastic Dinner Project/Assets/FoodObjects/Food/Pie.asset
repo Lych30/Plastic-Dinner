@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bb76604b5fc0a1846be9b2d954c6cb7a, type: 3}
-  m_Name: Citrus
+  m_Name: Pie
   m_EditorClassIdentifier: 
-  foodCategory:
-  - {fileID: 11400000, guid: 56de11974dc843f4d89ff65af0ae9c9b, type: 2}
+  sprite: {fileID: 21300000, guid: 99772e64ad89a9f41a2281d316204d7d, type: 3}
+  foodCategory: []
