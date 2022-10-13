@@ -20,7 +20,7 @@ public class CommandSystem : MonoBehaviour
     public List<Food> CameraCommand = new List<Food>();                           // the command the player send
     public Command commandFound = null;
 
-    public static CommandSystem Instance { get; private set; }
+    public static CommandSystem Instance;
     private void Awake()
     {
         // If there is an instance, and it's not me, delete myself.
@@ -150,12 +150,12 @@ public class CommandSystem : MonoBehaviour
         return false;
     }
 
-    void CustomerLeave()
+    public void CustomerLeave()
     {
         CustomerCommands.Remove(commandFound);
         Destroy(NPCManager.Instance.NPC_List[0].gameObject, 5);
         NPCManager.Instance.NPC_List[0].Destination = NPCManager.Instance.Exit.position;
         NPCManager.Instance.NPC_List.RemoveAt(0);
-        NPCManager.Instance.SpawnNPC();
+        
     }
 }
