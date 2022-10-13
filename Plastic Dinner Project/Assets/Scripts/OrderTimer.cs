@@ -86,7 +86,9 @@ public class OrderTimer : MonoBehaviour
         {
             image.gameObject.SetActive(false);
         }
-        CommandSystem.Instance.CustomerLeave();
+
+            CommandSystem.Instance.CustomerLeave();
+
         command = null;
         gameObject.SetActive(false);
     }

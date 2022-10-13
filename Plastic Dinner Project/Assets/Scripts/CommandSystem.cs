@@ -55,16 +55,15 @@ public class CommandSystem : MonoBehaviour
                 scoreSystem.AddScore(score);
                 scoreSystem.AddMultplier(0.5f);
                 ordersUI.DestroyOrder(commandFound);
-                CustomerLeave();
                 Debug.Log("Command is Success !");
-                //SoundManager.Instance.PlaySound("OrderValidated");
+                SoundManager.Instance.PlaySound("OrderValidated");
             }
             else
             {
                 scoreSystem.AddMultplier(-0.2f);
                 // Reset combo
                 Debug.Log("Command is Failed !");
-                //SoundManager.Instance.PlaySound("OrderMissed");
+                SoundManager.Instance.PlaySound("OrderMissed");
             }
         }
     }
