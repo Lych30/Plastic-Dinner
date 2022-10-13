@@ -7,10 +7,12 @@ public class MenuManager : MonoBehaviour
     public GameObject gameOver;
     public GameObject menu;
     public GameObject playerUI;
+    public GameObject tutorial;
     public TMP_Text scoreText;
     public ScoreSystem scoreSystem;
 
     public bool isMenu = true;
+    public bool isTutorial = false;
     public bool isGameOver = false;
     public bool isInGame = false;
     public bool canReplay = false;
@@ -29,18 +31,30 @@ public class MenuManager : MonoBehaviour
         menu.SetActive(true);
         gameOver.SetActive(false);
         playerUI.SetActive(false);
+        tutorial.SetActive(false);
     }
 
     void Update()
     {
-        if(isMenu && Input.GetKeyDown(KeyCode.JoystickButton0))
+        if(Input.GetKeyDown(KeyCode.JoystickButton0))
         {
-            Play();
-        }
-        else if(isGameOver && Input.GetKeyDown(KeyCode.JoystickButton0) && canReplay)
-        {
-            isInGame = false;
-            SceneManager.LoadScene("Game");
+            if(isMenu)
+            {
+                Play();
+            }
+            else if(isTutorial)
+            {
+                tutorial.SetActive(false);
+                isTutorial = false;
+                isInGame = true;
+                playerUI.SetActive(true);
+            }
+            else if(isGameOver && canReplay)
+            {
+                isInGame = false;
+                SceneManager.LoadScene("Game");
+            }
+            
         }
 
         if(Input.GetKeyDown(KeyCode.Escape))
@@ -75,7 +89,7 @@ public class MenuManager : MonoBehaviour
         yield return new WaitForSeconds(secondsBeforePlay);
         isMenu = false;
         menu.SetActive(false);
-        isInGame = true;
-        playerUI.SetActive(true);
+        isTutorial = true;
+        tutorial.SetActive(true);
     }
 }
