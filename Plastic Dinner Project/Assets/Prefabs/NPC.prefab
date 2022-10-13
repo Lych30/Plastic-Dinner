@@ -9775,7 +9775,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Destination: {x: 0, y: 0, z: 0}
   speed: 5
-  Fireworks: {fileID: 0}
+  Fireworks: {fileID: 6691911880341003487}
+  Nope: {fileID: 2100544361901235256}
   npcManager: {fileID: 0}
 --- !u!54 &4079897951640686539
 Rigidbody:
