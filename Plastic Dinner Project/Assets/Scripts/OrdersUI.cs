@@ -14,7 +14,6 @@ public class OrdersUI : MonoBehaviour
 
     private void Awake()
     {
-        //orders.Clear();
         foreach(OrderTimer order in orders)
         {
             order.gameObject.SetActive(false);
@@ -25,7 +24,6 @@ public class OrdersUI : MonoBehaviour
     void Start()
     {
         timer = timeBeforeNextOrder;
-        NPCManager.Instance.SpawnNPC();
     }
 
     // Update is called once per frame
@@ -44,11 +42,12 @@ public class OrdersUI : MonoBehaviour
         if (timer > timeBeforeNextOrder)
         {
             NPCManager.Instance.SpawnNPC();
+            timer = 0.0f;
         }
         timer += Time.deltaTime;
     }
 
-    void CreateOrder()
+    public void CreateOrder()
     {
         foreach(OrderTimer order in orders)
         {
@@ -69,14 +68,7 @@ public class OrdersUI : MonoBehaviour
                 break;
             }
         }
-        timer = 0.0f;
     }
-
-    //public void Subscribe(OrderTimer order)
-    //{
-    //    orders.Add(order);
-    //    order.gameObject.SetActive(false);
-    //}
 
     public void DestroyOrder(Command command)
     {

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class NPCManager : MonoBehaviour
 {
+    public OrdersUI ordersUI;
     [Header("NPC")]
     public List<NPCcontroler> NPC_List;
     public GameObject npcGameObject;
@@ -30,26 +31,10 @@ public class NPCManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // TO DO : Add a script to table -> and at awake make them subscribe to npcmanager
-        // in subscribe function in npcmanager -> add the table in table list inside npc manager
-        Tables = GameObject.FindGameObjectsWithTag("Table");
-
-        // TO DO (link to NPC Controller): 
-        //  Spawn NPC after OrderUI Has created a new order
-        // OR
-        //  Add a timer before spawn an npc
-        //      when timer is finished
-        //          spawn an npc
-        //              when npc has finished spawning and is at destination
-        //                  TakeOrder
-        //                      -> in CommandSystem -> call AddCommandToDo
-        // I think the second solution is better because more logical
-        
-            
-
-        
+        Tables = GameObject.FindGameObjectsWithTag("Table");  
     }
 
+    // OrdersUI -> SpawnNPC -> NPC Controller arrives at destinations -> GetOrder is called -> OrderUI CreateOrder -> Pass to CommandSystem who add it
     public void SpawnNPC()
     {
         if (NPC_List.Count < MaxNPCs)
@@ -60,6 +45,11 @@ public class NPCManager : MonoBehaviour
             NPC_List.Add(SpawnedNPCcontroler);
         }
 
+    }
+
+    public void TakeOrder()
+    {
+        ordersUI.CreateOrder();
     }
 
     Vector3 SetDestination()
