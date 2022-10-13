@@ -7,6 +7,7 @@ public class GameTimer : MonoBehaviour
 {
     public bool waitBeforeStartTimer = true;
     public float delay = 1.0f;
+    public MenuManager menuManager;
 
     [SerializeField]
     public float timerDuration;
@@ -51,6 +52,7 @@ public class GameTimer : MonoBehaviour
     }
     void Update()
     {
+        // for ui/ux purpose
         if(waitBeforeStartTimer)
         {
             delay -= Time.deltaTime;
@@ -60,6 +62,7 @@ public class GameTimer : MonoBehaviour
             }
             return;
         }
+        // -------
 
         if (countDown && timer > 0)
         {
@@ -70,6 +73,11 @@ public class GameTimer : MonoBehaviour
         {
             timer += Time.deltaTime;
             UpdateTimerDisplay(timer);
+        }
+
+        if(timer <= 0)
+        {
+            EndGame();
         }
     }
 
@@ -97,5 +105,10 @@ public class GameTimer : MonoBehaviour
         separator.enabled = enabled;
         firstSecond.enabled = enabled;
         secondSecond.enabled = enabled;
+    }
+
+    private void EndGame()
+    {
+        menuManager.GameOver();
     }
 }

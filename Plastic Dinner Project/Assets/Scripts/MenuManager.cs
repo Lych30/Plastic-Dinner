@@ -52,6 +52,7 @@ public class MenuManager : MonoBehaviour
     {
         isGameOver = true;
         gameOver.SetActive(true);
+        playerUI.SetActive(false);
         StartCoroutine(ReplayDelay());
     }
 
