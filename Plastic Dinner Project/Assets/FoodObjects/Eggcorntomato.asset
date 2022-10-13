@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c551625d14bbe4744bf473198b527c86, type: 3}
+  m_Name: Eggcorntomato
+  m_EditorClassIdentifier: 
+  foods:
+  - {fileID: 11400000, guid: e4e044d37cdbb9044a0b54a1a92c215e, type: 2}
+  - {fileID: 11400000, guid: 9628c2999c0754145be71155fe926981, type: 2}
+  - {fileID: 11400000, guid: 5ce59ebc8ce0df14b9097128ac96b448, type: 2}

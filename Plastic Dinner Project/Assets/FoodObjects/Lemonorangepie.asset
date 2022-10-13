@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c551625d14bbe4744bf473198b527c86, type: 3}
+  m_Name: Lemonorangepie
+  m_EditorClassIdentifier: 
+  foods:
+  - {fileID: 11400000, guid: dd2d55444bde898448a30dab5f8d4f6d, type: 2}
+  - {fileID: 11400000, guid: 093ab6bfd2ae5844f842517d204461f0, type: 2}
+  - {fileID: 11400000, guid: 10297a9fb7a9fbe42b32be2511b924ce, type: 2}
