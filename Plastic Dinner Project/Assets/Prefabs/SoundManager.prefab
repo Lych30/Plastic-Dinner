@@ -46,33 +46,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fadeDuration: 2
   sounds:
-  - name: Main
+  - name: BackgroundKitchen
     volume: 1
-    pitch: 1
+    pitch: 0
     spatialBlend: 0
     minDist3D: 0
     maxDist3D: 0
     mute: 0
     loop: 1
-    playOnAwake: 1
+    playOnAwake: 0
     clips:
-    - {fileID: 8300000, guid: 5c07f1f340819ea44a5d2500f4b148fc, type: 3}
+    - {fileID: 8300000, guid: 68ed09a089335cd489d83d96ac2b574f, type: 3}
     source: {fileID: 0}
-  - name: Clock
+  - name: BackgroundRoom
     volume: 1
-    pitch: 1
+    pitch: 0
     spatialBlend: 0
     minDist3D: 0
     maxDist3D: 0
     mute: 0
-    loop: 0
+    loop: 1
     playOnAwake: 0
     clips:
-    - {fileID: 8300000, guid: 6b65fdaeefd9f794bb5c825e948c5a30, type: 3}
+    - {fileID: 8300000, guid: ee4fc95ed5426a345b4a513a6c6a6e4e, type: 3}
     source: {fileID: 0}
   - name: Ding
     volume: 1
-    pitch: 1
+    pitch: 0
     spatialBlend: 0
     minDist3D: 0
     maxDist3D: 0
@@ -80,23 +80,25 @@ MonoBehaviour:
     loop: 0
     playOnAwake: 0
     clips:
-    - {fileID: 8300000, guid: faa278d131436ed49bc80b5a2f1468f1, type: 3}
+    - {fileID: 8300000, guid: 68acc28d666d2304a80854afe42dfa46, type: 3}
+    - {fileID: 8300000, guid: 6e98e1703448d104985a7b7d5bd3607f, type: 3}
+    - {fileID: 8300000, guid: 5707972d0f7148845ab7c721700e612d, type: 3}
     source: {fileID: 0}
-  - name: Happy
+  - name: Clock
     volume: 1
-    pitch: 1
+    pitch: 0
     spatialBlend: 0
     minDist3D: 0
     maxDist3D: 0
     mute: 0
-    loop: 0
+    loop: 1
     playOnAwake: 0
     clips:
-    - {fileID: 8300000, guid: fb065c9a11a9ad047af90c43121eb79c, type: 3}
+    - {fileID: 8300000, guid: c13e04db9c04aa641b677d6bb1ad0315, type: 3}
     source: {fileID: 0}
-  - name: Angry
+  - name: OrderMissed
     volume: 1
-    pitch: 1
+    pitch: 0
     spatialBlend: 0
     minDist3D: 0
     maxDist3D: 0
@@ -104,5 +106,29 @@ MonoBehaviour:
     loop: 0
     playOnAwake: 0
     clips:
-    - {fileID: 8300000, guid: b3d70a00c3945e8409f39a8b66ce00d9, type: 3}
+    - {fileID: 8300000, guid: 6f37c98238a467e4ab63e5fd87c8c858, type: 3}
+    source: {fileID: 0}
+  - name: OrderValidated
+    volume: 1
+    pitch: 0
+    spatialBlend: 0
+    minDist3D: 0
+    maxDist3D: 0
+    mute: 0
+    loop: 0
+    playOnAwake: 0
+    clips:
+    - {fileID: 8300000, guid: af836a15c55661e418dd4f8022ec8fe4, type: 3}
+    source: {fileID: 0}
+  - name: HappyEndgame
+    volume: 1
+    pitch: 0
+    spatialBlend: 0
+    minDist3D: 0
+    maxDist3D: 0
+    mute: 0
+    loop: 0
+    playOnAwake: 0
+    clips:
+    - {fileID: 8300000, guid: f662d3b11cb628d4cbed71bc0dab9d20, type: 3}
     source: {fileID: 0}

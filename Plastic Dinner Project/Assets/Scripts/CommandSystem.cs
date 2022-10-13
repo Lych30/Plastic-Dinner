@@ -44,6 +44,7 @@ public class CommandSystem : MonoBehaviour
             isCameraCommandCorrect = false;
             UpdateCameraCommand();
             CheckCameraCommand();
+            //SoundManager.Instance.PlaySound("Ding");
 
             if(isCameraCommandCorrect)
             {
@@ -55,11 +56,13 @@ public class CommandSystem : MonoBehaviour
                 ordersUI.DestroyOrder(commandFound);
 
                 Debug.Log("Command is Success !");
+                //SoundManager.Instance.PlaySound("OrderValidated");
             }
             else
             {
                 // Reset combo
                 Debug.Log("Command is Failed !");
+                //SoundManager.Instance.PlaySound("OrderMissed");
             }
         }
     }
