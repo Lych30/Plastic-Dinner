@@ -49,6 +49,7 @@ public class CommandSystem : MonoBehaviour
             if(isCameraCommandCorrect)
             {
                 // AddScore
+                NPCManager.Instance.NPC_List[0].TriggerFireworks();
                 string scoreGain = connection.message.Split('|')[1];
                 scoreGain = scoreGain.Remove(0,3);
                 float score = float.Parse(scoreGain);
@@ -60,6 +61,7 @@ public class CommandSystem : MonoBehaviour
             }
             else
             {
+                NPCManager.Instance.NPC_List[0].NopeParticles();
                 scoreSystem.AddMultplier(-0.2f);
                 // Reset combo
                 Debug.Log("Command is Failed !");

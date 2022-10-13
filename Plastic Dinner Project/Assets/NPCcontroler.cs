@@ -8,7 +8,8 @@ public class NPCcontroler : MonoBehaviour
     private Rigidbody rb;
     public float speed;
     private bool orderTaken = false;
-
+    public ParticleSystem Fireworks;
+    public ParticleSystem Nope;
     [Header("_______DEBUG________")]
     public NPCManager npcManager;
     void Start()
@@ -34,5 +35,15 @@ public class NPCcontroler : MonoBehaviour
             var dir = (Destination - transform.position).normalized;
             transform.position += dir * speed * Time.deltaTime;
         }
+    }
+
+    public void TriggerFireworks()
+    {
+        Fireworks.Play();
+    }
+
+    public void NopeParticles()
+    {
+        Nope.Play();
     }
 }
