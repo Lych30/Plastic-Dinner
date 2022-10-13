@@ -8,6 +8,7 @@ public class GameTimer : MonoBehaviour
     public bool waitBeforeStartTimer = true;
     public float delay = 1.0f;
     public MenuManager menuManager;
+    private bool _isNotPlayedYet = true;
 
     [SerializeField]
     public float timerDuration;
@@ -64,6 +65,12 @@ public class GameTimer : MonoBehaviour
         }
         // -------
 
+        if(timer <= 15 && _isNotPlayedYet)
+        {
+            //SoundManager.Instance.PlaySound("Clock");
+            _isNotPlayedYet = false;
+        }
+
         if (countDown && timer > 0)
         {
             timer -= Time.deltaTime;
@@ -108,7 +115,7 @@ public class GameTimer : MonoBehaviour
     }
 
     private void EndGame()
-    {
+    {   
         menuManager.GameOver();
     }
 }
