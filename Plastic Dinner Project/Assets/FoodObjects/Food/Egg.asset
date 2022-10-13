@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Egg
   m_EditorClassIdentifier: 
   foodCategory:
-  - {fileID: 11400000, guid: 5731b2e9afd0dde4795c60e3cfec66ac, type: 2}
+  - {fileID: 11400000, guid: 47607b6f2d85d5543a27730bf506c1b6, type: 2}

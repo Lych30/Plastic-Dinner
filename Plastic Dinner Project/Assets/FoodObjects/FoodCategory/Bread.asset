@@ -9,9 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c551625d14bbe4744bf473198b527c86, type: 3}
-  m_Name: SteakFrite
+  m_Script: {fileID: 11500000, guid: c1114eeb956c3954bbebb61f7d667d96, type: 3}
+  m_Name: Bread
   m_EditorClassIdentifier: 
-  foods:
-  - {fileID: 11400000, guid: 20199b54468aaf2439e10911ebc34291, type: 2}
-  - {fileID: 11400000, guid: c2b998a4027b2a84e87d95c325707179, type: 2}

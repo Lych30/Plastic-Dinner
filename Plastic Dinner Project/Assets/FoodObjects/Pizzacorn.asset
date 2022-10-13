@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c551625d14bbe4744bf473198b527c86, type: 3}
-  m_Name: SteakFrite
+  m_Name: Pizzacorn
   m_EditorClassIdentifier: 
   foods:
-  - {fileID: 11400000, guid: 20199b54468aaf2439e10911ebc34291, type: 2}
-  - {fileID: 11400000, guid: c2b998a4027b2a84e87d95c325707179, type: 2}
+  - {fileID: 11400000, guid: 51e1a2950ab34794fb627c97754a51ef, type: 2}
+  - {fileID: 11400000, guid: a595d559a5bf761489e573c89be31655, type: 2}
