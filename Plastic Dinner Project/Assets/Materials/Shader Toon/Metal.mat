@@ -57,8 +57,8 @@ Material:
     m_Floats:
     - Brightness_Rim: 0
     - Rim_Power: 6.28
-    - Toon_Ramp_Offset: 0.576
-    - Toon_Ramp_Smoothness: 0
+    - Toon_Ramp_Offset: 0.49
+    - Toon_Ramp_Smoothness: 0.047
     - _Brightness: 0
     - _QueueControl: 0
     - _QueueOffset: 0
@@ -67,8 +67,8 @@ Material:
     - _ToonRampOffset: 1
     - _ToonRampSmothness: 1
     m_Colors:
-    - Toon_Ramp_Tint: {r: 0.45723566, g: 0.6351679, b: 0.7075472, a: 1}
-    - _Color: {r: 0.63995194, g: 0.6886792, b: 0.6886792, a: 1}
+    - Toon_Ramp_Tint: {r: 0.32395872, g: 0.63164324, b: 0.754717, a: 1}
+    - _Color: {r: 0.7729619, g: 0.8490566, b: 0.8490566, a: 1}
     - _ToonRampTinting: {r: 1, g: 0.41176474, b: 0, a: 0.94509804}
   m_BuildTextureStacks: []
 --- !u!114 &4641065249452626107

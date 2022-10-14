@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Blueberry
+  m_Name: Set
   m_Shader: {fileID: -6465566751694194690, guid: edf4088c745ffdb44b3aa6ed00bbfe19,
     type: 3}
   m_ValidKeywords: []
@@ -58,7 +58,7 @@ Material:
     - Brightness_Rim: 0
     - Rim_Power: 6.28
     - Toon_Ramp_Offset: 0.576
-    - Toon_Ramp_Smoothness: 0.169
+    - Toon_Ramp_Smoothness: 0.14
     - _Brightness: 0
     - _QueueControl: 0
     - _QueueOffset: 0
@@ -67,8 +67,8 @@ Material:
     - _ToonRampOffset: 1
     - _ToonRampSmothness: 1
     m_Colors:
-    - Toon_Ramp_Tint: {r: 0.6468566, g: 0.033018887, b: 1, a: 1}
-    - _Color: {r: 0.30153078, g: 0.3254399, b: 0.8301887, a: 1}
+    - Toon_Ramp_Tint: {r: 0.630785, g: 0.7216861, b: 0.764151, a: 1}
+    - _Color: {r: 0.9577252, g: 0.9622642, b: 0.96200573, a: 1}
     - _ToonRampTinting: {r: 1, g: 0.41176474, b: 0, a: 0.94509804}
   m_BuildTextureStacks: []
 --- !u!114 &4641065249452626107
