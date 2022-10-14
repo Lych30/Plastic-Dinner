@@ -41,8 +41,9 @@ public class OrdersUI : MonoBehaviour
 
         if (timer > timeBeforeNextOrder)
         {
-            NPCManager.Instance.SpawnNPC();
             timer = 0.0f;
+            NPCManager.Instance.SpawnNPC();
+            
         }
         timer += Time.deltaTime;
     }
