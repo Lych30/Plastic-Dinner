@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class CommandSystem : MonoBehaviour
 {
@@ -7,6 +8,15 @@ public class CommandSystem : MonoBehaviour
     public ScoreSystem scoreSystem;
     public MenuManager menu; 
     public OrdersUI ordersUI;
+
+    public GameObject cutsUI;
+    public TMP_Text textCut;
+    public float timerCutDelay = 20.0f;
+    public int cutsCount = 0;
+    
+    [Header("____ CUT DEBUG ______")]
+    public float cutDelay = 0.0f;
+    public bool needsCut = false;
 
     [Header("______GAME DESIGN________")]
     //public List<Command> commandList = new List<Command>();               // the list of commands that can appear on screen
@@ -35,39 +45,82 @@ public class CommandSystem : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        cutsUI.SetActive(false);
+        cutDelay = timerCutDelay;
+    }
+
     // Update is called once per frame
     void Update()
     {
-        if ((Input.GetKeyDown(KeyCode.JoystickButton0) || Input.GetKeyDown(KeyCode.Space)) && menu.isInGame)
+        if(menu.isInGame)
         {
-            //Debug.Log("Ding ! ");
-            isCameraCommandCorrect = false;
-            UpdateCameraCommand();
-            CheckCameraCommand();
-            SoundManager.Instance.PlaySound("Ding");
+            if (!needsCut)
+            {
+                cutDelay -= Time.deltaTime;
+                if (cutDelay <= 0)
+                {
+                    needsCut = true;
+                    
+                    cutsCount = Random.Range(10, 30);
+                    cutsUI.SetActive(true);
+                    textCut.text = cutsCount.ToString();
+                    
+                }
 
-            if(isCameraCommandCorrect)
-            {
-                // AddScore
-                NPCManager.Instance.NPC_List[0].TriggerFireworks();
-                NPCManager.Instance.NPC_List[0].StopAllCoroutines();
-                NPCManager.Instance.NPC_List[0].TriggerAnim("TriggerHappy");
-                string scoreGain = connection.message.Split('|')[1];
-                scoreGain = scoreGain.Remove(0,3);
-                float score = float.Parse(scoreGain);
-                scoreSystem.AddScore(score);
-                scoreSystem.AddMultplier(0.5f);
-                ordersUI.DestroyOrder(commandFound);
-                Debug.Log("Command is Success !");
-                SoundManager.Instance.PlaySound("OrderValidated");
+                if (Input.GetKeyDown(KeyCode.JoystickButton0) || Input.GetKeyDown(KeyCode.Space))
+                {
+                /// Send Command
+
+                    //Debug.Log("Ding ! ");
+                    isCameraCommandCorrect = false;
+                    UpdateCameraCommand();
+                    CheckCameraCommand();
+                    SoundManager.Instance.PlaySound("Ding");
+
+                    if (isCameraCommandCorrect)
+                    {
+                        // AddScore
+                        NPCManager.Instance.NPC_List[0].TriggerFireworks();
+                        NPCManager.Instance.NPC_List[0].StopAllCoroutines();
+                        NPCManager.Instance.NPC_List[0].TriggerAnim("TriggerHappy");
+                        string scoreGain = connection.message.Split('|')[1];
+                        scoreGain = scoreGain.Remove(0, 3);
+                        float score = float.Parse(scoreGain);
+                        scoreSystem.AddScore(score);
+                        scoreSystem.AddMultplier(0.5f);
+                        ordersUI.DestroyOrder(commandFound);
+                        Debug.Log("Command is Success !");
+                        SoundManager.Instance.PlaySound("OrderValidated");
+                    }
+                    else
+                    {
+                        NPCManager.Instance.NPC_List[0].NopeParticles();
+                        scoreSystem.AddMultplier(-0.2f);
+                        // Reset combo
+                        Debug.Log("Command is Failed !");
+                        SoundManager.Instance.PlaySound("OrderMissed");
+                    }
+                }
             }
-            else
+            else 
             {
-                NPCManager.Instance.NPC_List[0].NopeParticles();
-                scoreSystem.AddMultplier(-0.2f);
-                // Reset combo
-                Debug.Log("Command is Failed !");
-                SoundManager.Instance.PlaySound("OrderMissed");
+                if (cutsCount > 0)
+                {
+                    if (Input.GetKeyDown(KeyCode.JoystickButton1) || Input.GetKeyDown(KeyCode.JoystickButton2) || Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow))
+                    {
+                        cutsCount--;
+                        textCut.text = cutsCount.ToString();
+                        if (cutsCount <= 0)
+                        {
+                            cutsUI.SetActive(false);
+                            cutDelay = timerCutDelay;
+                            textCut.text = "0";
+                            needsCut = false;
+                        }
+                    }
+                }
             }
         }
     }
