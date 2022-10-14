@@ -12,4 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02c6496820084d94496af145b50e43bd, type: 3}
   m_Name: FoodList
   m_EditorClassIdentifier: 
-  foods: []
+  foods:
+  - {fileID: 11400000, guid: c8b861b2ffcc61249bb2647b8043b03e, type: 2}
+  - {fileID: 11400000, guid: 32670e9261a97e742a8220a89314147b, type: 2}
+  - {fileID: 11400000, guid: 9628c2999c0754145be71155fe926981, type: 2}
+  - {fileID: 11400000, guid: eaeb9c5e1d474ab42b3fc83e69b2df7e, type: 2}
+  - {fileID: 11400000, guid: e4e044d37cdbb9044a0b54a1a92c215e, type: 2}
+  - {fileID: 11400000, guid: a6b95c0c772825841948d88d052a1adc, type: 2}
+  - {fileID: 11400000, guid: dd2d55444bde898448a30dab5f8d4f6d, type: 2}
+  - {fileID: 11400000, guid: 093ab6bfd2ae5844f842517d204461f0, type: 2}
+  - {fileID: 11400000, guid: 10297a9fb7a9fbe42b32be2511b924ce, type: 2}
+  - {fileID: 11400000, guid: 814abcb42ed9000419c77f4039f10aa5, type: 2}
+  - {fileID: 11400000, guid: cd957a408d589fe43ba2761e40c6b4e1, type: 2}
+  - {fileID: 11400000, guid: 5ce59ebc8ce0df14b9097128ac96b448, type: 2}

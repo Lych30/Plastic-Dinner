@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Croissantlemon
   m_EditorClassIdentifier: 
   foods:
-  - {fileID: 11400000, guid: 56b46a7e757deb943b564211be7e08dc, type: 2}
-  - {fileID: 11400000, guid: de62ed9deee9ab049a8c89b81e50d568, type: 2}
+  - {fileID: 11400000, guid: eaeb9c5e1d474ab42b3fc83e69b2df7e, type: 2}
+  - {fileID: 11400000, guid: dd2d55444bde898448a30dab5f8d4f6d, type: 2}

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Eggtomato
   m_EditorClassIdentifier: 
   foods:
-  - {fileID: 11400000, guid: 9e98c684a4077994f8abc1377c43be54, type: 2}
-  - {fileID: 11400000, guid: ebd1692998b640d418d3364845ba914d, type: 2}
+  - {fileID: 11400000, guid: e4e044d37cdbb9044a0b54a1a92c215e, type: 2}
+  - {fileID: 11400000, guid: 5ce59ebc8ce0df14b9097128ac96b448, type: 2}

@@ -20,7 +20,7 @@ public class CommandSystem : MonoBehaviour
     public List<Food> CameraCommand = new List<Food>();                           // the command the player send
     public Command commandFound = null;
 
-    public static CommandSystem Instance { get; private set; }
+    public static CommandSystem Instance;
     private void Awake()
     {
         // If there is an instance, and it's not me, delete myself.
@@ -38,28 +38,36 @@ public class CommandSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ((Input.GetKeyDown(KeyCode.JoystickButton0) || Input.GetKeyDown(KeyCode.P)) && menu.isInGame)
+        if ((Input.GetKeyDown(KeyCode.JoystickButton0) || Input.GetKeyDown(KeyCode.Space)) && menu.isInGame)
         {
             //Debug.Log("Ding ! ");
             isCameraCommandCorrect = false;
             UpdateCameraCommand();
             CheckCameraCommand();
+            SoundManager.Instance.PlaySound("Ding");
 
             if(isCameraCommandCorrect)
             {
                 // AddScore
+                NPCManager.Instance.NPC_List[0].TriggerFireworks();
+                NPCManager.Instance.NPC_List[0].StopAllCoroutines();
+                NPCManager.Instance.NPC_List[0].TriggerAnim("TriggerHappy");
                 string scoreGain = connection.message.Split('|')[1];
                 scoreGain = scoreGain.Remove(0,3);
                 float score = float.Parse(scoreGain);
                 scoreSystem.AddScore(score);
+                scoreSystem.AddMultplier(0.5f);
                 ordersUI.DestroyOrder(commandFound);
-
                 Debug.Log("Command is Success !");
+                SoundManager.Instance.PlaySound("OrderValidated");
             }
             else
             {
+                NPCManager.Instance.NPC_List[0].NopeParticles();
+                scoreSystem.AddMultplier(-0.2f);
                 // Reset combo
                 Debug.Log("Command is Failed !");
+                SoundManager.Instance.PlaySound("OrderMissed");
             }
         }
     }
@@ -137,7 +145,7 @@ public class CommandSystem : MonoBehaviour
             if (hasFound)
             {
                 commandFound = customerCommand;
-                CustomerLeave();
+               
                 return true;
             }
         }
@@ -147,12 +155,12 @@ public class CommandSystem : MonoBehaviour
         return false;
     }
 
-    void CustomerLeave()
+    public void CustomerLeave()
     {
         CustomerCommands.Remove(commandFound);
         Destroy(NPCManager.Instance.NPC_List[0].gameObject, 5);
         NPCManager.Instance.NPC_List[0].Destination = NPCManager.Instance.Exit.position;
         NPCManager.Instance.NPC_List.RemoveAt(0);
-        NPCManager.Instance.SpawnNPC();
+        
     }
 }

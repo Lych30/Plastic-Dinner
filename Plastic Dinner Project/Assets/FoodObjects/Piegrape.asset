@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Piegrape
   m_EditorClassIdentifier: 
   foods:
-  - {fileID: 11400000, guid: 99a8605a8d59625488d7d4145f8d345a, type: 2}
-  - {fileID: 11400000, guid: 4642dafb786e102499c7a518643958f0, type: 2}
+  - {fileID: 11400000, guid: 10297a9fb7a9fbe42b32be2511b924ce, type: 2}
+  - {fileID: 11400000, guid: a6b95c0c772825841948d88d052a1adc, type: 2}

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Corntomato
   m_EditorClassIdentifier: 
   foods:
-  - {fileID: 11400000, guid: a595d559a5bf761489e573c89be31655, type: 2}
-  - {fileID: 11400000, guid: ebd1692998b640d418d3364845ba914d, type: 2}
+  - {fileID: 11400000, guid: 9628c2999c0754145be71155fe926981, type: 2}
+  - {fileID: 11400000, guid: 5ce59ebc8ce0df14b9097128ac96b448, type: 2}

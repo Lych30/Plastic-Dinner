@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Croissantblackberry
   m_EditorClassIdentifier: 
   foods:
-  - {fileID: 11400000, guid: 56b46a7e757deb943b564211be7e08dc, type: 2}
-  - {fileID: 11400000, guid: 32f71592f10f2344cbee700ce7f58a95, type: 2}
+  - {fileID: 11400000, guid: eaeb9c5e1d474ab42b3fc83e69b2df7e, type: 2}
+  - {fileID: 11400000, guid: 32670e9261a97e742a8220a89314147b, type: 2}
