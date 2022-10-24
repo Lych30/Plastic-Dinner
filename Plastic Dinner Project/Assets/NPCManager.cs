@@ -11,7 +11,7 @@ public class NPCManager : MonoBehaviour
     public Transform spawnTransform;
     public Transform Exit;
     public int MaxNPCs;
-
+    public Material[] materials;
     private GameObject[] Tables;
 
     public static NPCManager Instance { get; private set; }
@@ -42,6 +42,9 @@ public class NPCManager : MonoBehaviour
             GameObject SpawnedNPC = Instantiate(npcGameObject, spawnTransform.position, Quaternion.identity);
             NPCcontroler SpawnedNPCcontroler = SpawnedNPC.GetComponent<NPCcontroler>();
             SpawnedNPCcontroler.Destination = SetDestination();
+            SpawnedNPC.transform.GetChild(0).GetChild(0).GetComponent<MeshRenderer>().material = materials[Random.Range(0,materials.Length)];
+            SpawnedNPC.transform.GetChild(0).GetChild(3).GetComponent<MeshRenderer>().material = materials[Random.Range(0, materials.Length)];
+            SpawnedNPC.transform.GetChild(0).GetChild(4).GetComponent<MeshRenderer>().material = materials[Random.Range(0, materials.Length)];
             NPC_List.Add(SpawnedNPCcontroler);
         }
 

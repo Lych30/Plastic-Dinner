@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028387, g: 0.22571434, b: 0.3069233, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028387, g: 0.22571449, b: 0.30692312, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3985,7 +3985,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 551290834}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.6, y: 0.95, z: 7.07}
+  m_LocalPosition: {x: 9.16, y: 0.18, z: 7.07}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9974,7 +9974,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1337879657}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.65, y: 1.39, z: 7.69}
+  m_LocalPosition: {x: 10.35, y: 0.24, z: 10.22}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11681,6 +11681,11 @@ MonoBehaviour:
   spawnTransform: {fileID: 551290835}
   Exit: {fileID: 1337879658}
   MaxNPCs: 8
+  materials:
+  - {fileID: 2100000, guid: 80700cb075bb783499daa10e178b163a, type: 2}
+  - {fileID: 2100000, guid: 011d5f52a15b5454ebee28c0321e1cd3, type: 2}
+  - {fileID: 2100000, guid: 2bcac11386dd11e468588479da853553, type: 2}
+  - {fileID: 2100000, guid: 8ab7a5af37dbfd54988a72e22118a5ff, type: 2}
 --- !u!1 &1575912261
 GameObject:
   m_ObjectHideFlags: 0

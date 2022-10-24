@@ -12,6 +12,7 @@ public class NPCcontroler : MonoBehaviour
     public ParticleSystem Fireworks;
     public ParticleSystem Nope;
     public Animator animator;
+    public Animator NPCanimator;
     [Header("_______DEBUG________")]
     public NPCManager npcManager;
     void Start()
@@ -25,17 +26,21 @@ public class NPCcontroler : MonoBehaviour
     {
         if ((Destination - transform.position).magnitude < tolerance)
         {
+            NPCanimator.Play("CustomerIdle");
             if (!orderTaken)
             {
                 orderTaken = true;
                 npcManager.TakeOrder();
                 animator.Play("waiting");
+                
             }
         }
         else
         {
             var dir = (Destination - transform.position).normalized;
             transform.position += dir * speed * Time.deltaTime;
+            transform.LookAt(Destination);
+            NPCanimator.Play("CustomerWalking");
         }
     }
 
@@ -56,12 +61,15 @@ public class NPCcontroler : MonoBehaviour
     public void TriggerAnim(string trigger)
     {
         animator.SetTrigger(trigger);
-        
+        if(trigger == "TriggerAngry")
+        {
+            transform.GetChild(0).GetChild(2).GetComponent<MeshRenderer>().material.color = Color.red;
+        }
     }
     IEnumerator TriggerAnimDelay(string trigger, float delay)
     {
         yield return new WaitForSeconds(delay);
-        animator.SetTrigger(trigger);
+        TriggerAnim(trigger);
         Debug.Log(trigger);
     }
 }

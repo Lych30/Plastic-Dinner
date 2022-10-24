@@ -66,6 +66,7 @@ public class OrderTimer : MonoBehaviour
     {
         remaningDuration = second;
         NPCManager.Instance.NPC_List[NPCManager.Instance.NPC_List.Count - 1].TriggerAnim("TriggerAngry",orderDuration/1.25f);
+        
         StartCoroutine(UpdateTimer());
     }
 
