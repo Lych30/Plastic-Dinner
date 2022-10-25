@@ -52,6 +52,7 @@ public class NPCController : MonoBehaviour
             {
                 orderTaken = true;
                 currentOrder = CommandSystem.TakeOrder();
+                animator.Play("waiting");
             }
         }
     }
