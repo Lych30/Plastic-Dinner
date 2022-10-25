@@ -89,6 +89,7 @@ GameObject:
   - component: {fileID: 2041605133653946952}
   - component: {fileID: 2041605133653946951}
   - component: {fileID: 7633928514010689493}
+  - component: {fileID: 5759888253478189375}
   m_Layer: 5
   m_Name: UIOrder
   m_TagString: Untagged
@@ -177,6 +178,26 @@ MonoBehaviour:
   - {fileID: 4726824649172121587}
   currentOrder: {fileID: 0}
   timer: 0
+--- !u!95 &5759888253478189375
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2041605133653946948}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 72d6b4beeeeb71e4ab6b8bb533b6ebb2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4726824649172121581
 GameObject:
   m_ObjectHideFlags: 0

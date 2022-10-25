@@ -9,7 +9,7 @@ public class NPCController : MonoBehaviour
     public Animator animator;
     public Animator NPCanimator;
     public float speed = 5.0f;
-    public float tolerance = 3.0f;
+    public float tolerance = 4.0f;
 
     [Header("____________DEBUG__________")]
     public Vector3 destination = Vector3.zero;
