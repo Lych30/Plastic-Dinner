@@ -12,6 +12,9 @@ public class NPCManager : MonoBehaviour
     [Header("____________DEBUG___________")]
     public List<GameObject> npcPool = new List<GameObject>();
     public List<GameObject> destinations = new List<GameObject>();
+    int previousDestination = 10;
+
+    public Material[] materials;
     public float timer = 0.0f;
     public static NPCManager Instance { get; private set; }
 
@@ -54,6 +57,9 @@ public class NPCManager : MonoBehaviour
             if (!npc.activeInHierarchy)
             {
                 npc.SetActive(true);
+                npc.transform.GetChild(0).GetChild(0).GetComponent<MeshRenderer>().material = materials[Random.Range(0, materials.Length)];
+                npc.transform.GetChild(0).GetChild(3).GetComponent<MeshRenderer>().material = materials[Random.Range(0, materials.Length)];
+                npc.transform.GetChild(0).GetChild(4).GetComponent<MeshRenderer>().material = materials[Random.Range(0, materials.Length)];
                 break;
             }
         }
@@ -82,6 +88,11 @@ public class NPCManager : MonoBehaviour
         }
 
         int rng = Random.Range(0, destinations.Count);
+        while(rng == previousDestination)
+        {
+            rng = Random.Range(0, destinations.Count);
+        }
+        previousDestination = rng;
         return destinations[rng].transform.position; ;
     }
 

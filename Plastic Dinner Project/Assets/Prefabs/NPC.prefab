@@ -14637,6 +14637,7 @@ MonoBehaviour:
   Fireworks: {fileID: 3552740527485419297}
   Nope: {fileID: 2100544361901235256}
   animator: {fileID: 5019792022544667174}
+  NPCanimator: {fileID: 8037386908176486165}
   speed: 5
   tolerance: 2.5
   destination: {x: 0, y: 0, z: 0}

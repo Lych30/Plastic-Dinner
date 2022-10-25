@@ -1,13 +1,15 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class NPCController : MonoBehaviour
 {
     public ParticleSystem Fireworks;
     public ParticleSystem Nope;
     public Animator animator;
+    public Animator NPCanimator;
     public float speed = 5.0f;
-    public float tolerance = 2.0f;
+    public float tolerance = 3.0f;
 
     [Header("____________DEBUG__________")]
     public Vector3 destination = Vector3.zero;
@@ -15,14 +17,17 @@ public class NPCController : MonoBehaviour
     public Command currentOrder = null;
     public Vector3 exit = Vector3.zero;
     public NPCManager npcManager;
-
+    Color initialcolor;
     private void Awake()
     {
+        initialcolor = transform.GetChild(0).GetChild(2).GetComponent<MeshRenderer>().material.color;
         npcManager = NPCManager.Instance;
     }
 
     public void OnEnable()
     {
+        transform.GetChild(0).GetChild(2).GetComponent<MeshRenderer>().material.color = initialcolor;
+
         orderTaken = false;
         destination = npcManager.SetDestination_Impl();
         transform.position = npcManager.GetSpawnPoint();
@@ -31,6 +36,8 @@ public class NPCController : MonoBehaviour
 
     public void OnDisable()
     {
+        animator.ResetTrigger("TriggerHappy");
+        animator.ResetTrigger("TriggerAngry");
         orderTaken = false;
         currentOrder = null;
     }
@@ -47,12 +54,15 @@ public class NPCController : MonoBehaviour
             {
                 Vector3 dir = v.normalized;
                 transform.position += dir * speed * Time.deltaTime;
+                transform.LookAt(destination);
+                NPCanimator.Play("CustomerWalking");
             }
             else
             {
                 orderTaken = true;
                 currentOrder = CommandSystem.TakeOrder();
                 animator.Play("waiting");
+                NPCanimator.Play("CustomerIdle");
             }
         }
     }
@@ -72,6 +82,7 @@ public class NPCController : MonoBehaviour
         }
         else
         {
+            transform.GetChild(0).GetChild(2).GetComponent<MeshRenderer>().material.color = Color.red;
             TriggerAnim("TriggerAngry");
             NopeParticles();
         }
@@ -83,11 +94,12 @@ public class NPCController : MonoBehaviour
         {
             v = exit - transform.position;
             distance = v.magnitude;
-
+            transform.LookAt(exit);
             Vector3 dir = v.normalized;
             transform.position += dir * speed * Time.deltaTime;
             yield return null;
         }
+        
         gameObject.SetActive(false);
     }
 
@@ -114,7 +126,7 @@ public class NPCController : MonoBehaviour
     IEnumerator TriggerAnimDelay(string trigger, float delay)
     {
         yield return new WaitForSeconds(delay);
-        animator.SetTrigger(trigger);
+        TriggerAnim(trigger);
         Debug.Log(trigger);
     }
 }
