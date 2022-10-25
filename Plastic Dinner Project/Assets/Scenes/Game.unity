@@ -2150,6 +2150,7 @@ Transform:
   - {fileID: 1885214066}
   - {fileID: 1643250121}
   - {fileID: 747785410}
+  - {fileID: 1077507050}
   m_Father: {fileID: 255055217}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2769,6 +2770,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 378078678}
   m_CullTransparentMesh: 1
+--- !u!1 &410013845 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 0a33f17e0fd81d94da5518e71af83baa,
+    type: 3}
+  m_PrefabInstance: {fileID: 509480658}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &444649343 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: cd10e8ce8fb61d14eaea211f25c47482,
@@ -2892,6 +2899,12 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   image: {fileID: 450299214}
+--- !u!1 &469921364 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 0a33f17e0fd81d94da5518e71af83baa,
+    type: 3}
+  m_PrefabInstance: {fileID: 922291345}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &471326771
 GameObject:
   m_ObjectHideFlags: 0
@@ -5629,6 +5642,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 509480658}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &807464733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 410013845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cc875a5d800d2b4f80314b107dabe8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &829102671
 GameObject:
   m_ObjectHideFlags: 0
@@ -7101,7 +7126,7 @@ GameObject:
   - component: {fileID: 1077507052}
   - component: {fileID: 1077507051}
   m_Layer: 0
-  m_Name: rre
+  m_Name: Sol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7114,13 +7139,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1077507049}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3619, y: -10260, z: -19600}
-  m_LocalScale: {x: 147439.58, y: 133341.36, z: 6392.1533}
+  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -32.62072, y: -45.365875, z: -20.494114}
+  m_LocalScale: {x: 348.7087, y: 315.36508, z: 15.118054}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 780124267}
-  m_RootOrder: 0
+  m_Father: {fileID: 309194384}
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1077507051
 BoxCollider:
@@ -9397,6 +9422,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 922291345}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1373551777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 469921364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cc875a5d800d2b4f80314b107dabe8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1373872899
 GameObject:
   m_ObjectHideFlags: 0
@@ -13670,6 +13707,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50dc78084bf3f6746b96961dd923718a, type: 3}
+--- !u!1 &1985546504 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 0a33f17e0fd81d94da5518e71af83baa,
+    type: 3}
+  m_PrefabInstance: {fileID: 1121502061}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1985546508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1985546504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cc875a5d800d2b4f80314b107dabe8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1993652262 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 90ba07004f87f4f49803311b8d705696,
