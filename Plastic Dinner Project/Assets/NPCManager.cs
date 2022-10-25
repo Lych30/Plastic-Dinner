@@ -13,7 +13,7 @@ public class NPCManager : MonoBehaviour
     public int MaxNPCs;
     public Material[] materials;
     private GameObject[] Tables;
-
+    int previousTable = 10;
     public static NPCManager Instance { get; private set; }
     private void Awake()
     {
@@ -59,6 +59,11 @@ public class NPCManager : MonoBehaviour
     {
         Vector3 Destination = new Vector3(0,0,0);
         int randomTable = Random.Range(0, Tables.Length);
+        while (randomTable == previousTable)
+        {
+           randomTable = Random.Range(0, Tables.Length);
+        }
+        previousTable = randomTable;
         Destination = Tables[randomTable].transform.position;
         return Destination;
     }

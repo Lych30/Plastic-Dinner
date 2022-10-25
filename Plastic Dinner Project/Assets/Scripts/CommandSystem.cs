@@ -10,6 +10,7 @@ public class CommandSystem : MonoBehaviour
     public OrdersUI ordersUI;
 
     public GameObject cutsUI;
+    public CutUI cutUIScript;
     public TMP_Text textCut;
     public float timerCutDelay = 20.0f;
     public int cutsCount = 0;
@@ -111,9 +112,11 @@ public class CommandSystem : MonoBehaviour
                     if (Input.GetKeyDown(KeyCode.JoystickButton1) || Input.GetKeyDown(KeyCode.JoystickButton2) || Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow))
                     {
                         cutsCount--;
+                        //switch sprite
+                        cutUIScript.CutSwitch();
                         textCut.text = cutsCount.ToString();
                         if (cutsCount <= 0)
-                        {
+                        { 
                             cutsUI.SetActive(false);
                             cutDelay = timerCutDelay;
                             textCut.text = "0";
