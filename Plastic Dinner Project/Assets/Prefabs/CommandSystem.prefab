@@ -47,10 +47,54 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connection: {fileID: 484361271051052904}
-  foodList: {fileID: 11400000, guid: 41cabcc842e9cd54b9a5e6c7b07133f9, type: 2}
-  restaurantMenu: []
+  scoreSystem: {fileID: 0}
+  menuManager: {fileID: 0}
   uIOrderManager: {fileID: 0}
+  foodList: {fileID: 11400000, guid: 41cabcc842e9cd54b9a5e6c7b07133f9, type: 2}
+  restaurantMenu:
+  - {fileID: 11400000, guid: 17e0e07dd4a567f41b34373c5477580b, type: 2}
+  - {fileID: 11400000, guid: e65844d062e39ee4abb4e33f2bc3ee3c, type: 2}
+  - {fileID: 11400000, guid: 64b78c813266519408f14dd316d71889, type: 2}
+  - {fileID: 11400000, guid: fc22d506a9db65644b91a18f3eac2ed6, type: 2}
+  - {fileID: 11400000, guid: 6e1f41290fc746d43a6b9cdfefd0df28, type: 2}
+  - {fileID: 11400000, guid: 315fbbc8e1c31f74d86bb19720f003e7, type: 2}
+  - {fileID: 11400000, guid: 0b23a48339cef24409a1ec8a3adf3138, type: 2}
+  - {fileID: 11400000, guid: 37e7f64a91eb9f24fbd8d3093d8bb15b, type: 2}
+  - {fileID: 11400000, guid: 979e45faa5ddab042be8fdf1dc503b09, type: 2}
+  - {fileID: 11400000, guid: de3fd80c8b58f684f959aaee227c4850, type: 2}
+  - {fileID: 11400000, guid: e4dbc2a4ea3e71947a604918567f06dc, type: 2}
+  - {fileID: 11400000, guid: 3ab975521af6ab94ca8ea557b3d0f0b0, type: 2}
+  - {fileID: 11400000, guid: 2a11cf37449c23f49a84f4e31c1d3900, type: 2}
+  - {fileID: 11400000, guid: d040dd3eff98be34994d0068d34a166a, type: 2}
+  - {fileID: 11400000, guid: bfbc8d8e4417780488c39ce9e442111e, type: 2}
+  - {fileID: 11400000, guid: 027961c0d5b41164484a183a677f7bae, type: 2}
+  - {fileID: 11400000, guid: ab14b78ae37a1a6418471270d001a9a1, type: 2}
+  - {fileID: 11400000, guid: 83f8fe29170ec884497dfedd61f8b26b, type: 2}
+  - {fileID: 11400000, guid: cb90c189a851f3c4788d51e03a5efaf6, type: 2}
+  - {fileID: 11400000, guid: ac8037993285fe84fa6e5f20517ed607, type: 2}
+  - {fileID: 11400000, guid: a46480e127f3d8d44bfabeadbf328e33, type: 2}
+  - {fileID: 11400000, guid: 6a7ff88befeedb4439b9c232e6efb614, type: 2}
+  - {fileID: 11400000, guid: e5b7ea0268eeb6d438d9d9b527c3b471, type: 2}
+  - {fileID: 11400000, guid: 563e97e09e895dc4e9d86c255a91456c, type: 2}
+  - {fileID: 11400000, guid: 3d74e91b662e2d14f85f916aba46d7b0, type: 2}
+  - {fileID: 11400000, guid: 7ce2c2ea7b5d818468714670883bc555, type: 2}
+  - {fileID: 11400000, guid: 43f4348473db948499203629e1a56370, type: 2}
+  - {fileID: 11400000, guid: f80151d08b6123e4ba6657c156afa367, type: 2}
+  - {fileID: 11400000, guid: 5f9decfb17902214ea2fb236bf7f23f5, type: 2}
+  - {fileID: 11400000, guid: cc0f641c189a1b44eb612bc5fe32bbbf, type: 2}
+  - {fileID: 11400000, guid: 66958be6da81d0d4b94e93a68e2ff006, type: 2}
+  cutsUI: {fileID: 0}
+  textCut: {fileID: 0}
+  timerCutDelay: 20
+  minCut: 10
+  maxCut: 30
+  cutDelay: 0
+  needCuts: 0
+  cutsCount: 0
   customerOrders: []
+  CameraFoods: []
+  cameraCommand: {fileID: 0}
+  isCameraCommandCorrect: 0
 --- !u!114 &484361271051052904
 MonoBehaviour:
   m_ObjectHideFlags: 0
