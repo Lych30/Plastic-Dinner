@@ -79,37 +79,6 @@ public class CommandSystem : MonoBehaviour
                 }
 
                 // SEND COMMAND
-                /// Send Command
-
-                //                    //Debug.Log("Ding ! ");
-                //                    isCameraCommandCorrect = false;
-                //                    UpdateCameraCommand();
-                //                    CheckCameraCommand();
-                //                    SoundManager.Instance.PlaySound("Ding");
-
-                //                    if (isCameraCommandCorrect)
-                //                    {
-                //                        // AddScore
-                //                        NPCManager.Instance.NPC_List[0].TriggerFireworks();
-                //                        NPCManager.Instance.NPC_List[0].StopAllCoroutines();
-                //                        NPCManager.Instance.NPC_List[0].TriggerAnim("TriggerHappy");
-                //                        string scoreGain = connection.message.Split('|')[1];
-                //                        scoreGain = scoreGain.Remove(0, 3);
-                //                        float score = float.Parse(scoreGain);
-                //                        scoreSystem.AddScore(score);
-                //                        scoreSystem.AddMultplier(0.5f);
-                //                        ordersUI.DestroyOrder(commandFound);
-                //                        Debug.Log("Command is Success !");
-                //                        SoundManager.Instance.PlaySound("OrderValidated");
-                //                    }
-                //                    else
-                //                    {
-                //                        NPCManager.Instance.NPC_List[0].NopeParticles();
-                //                        scoreSystem.AddMultplier(-0.2f);
-                //                        // Reset combo
-                //                        Debug.Log("Command is Failed !");
-                //                        SoundManager.Instance.PlaySound("OrderMissed");
-                //                    }
                 if (Input.GetKeyDown(KeyCode.JoystickButton0) || Input.GetKeyDown(KeyCode.Space))
                 {
 
