@@ -48,7 +48,7 @@ public class SoundManager : MonoBehaviour
 
     private void Start()
     {
-        PlaySound("Main");
+        //PlaySound("Main");
     }
 
     //How to use : SoundManager.Instance.PlaySound(name);
