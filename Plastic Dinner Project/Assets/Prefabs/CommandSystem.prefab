@@ -9,6 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4911525780149070667}
+  - component: {fileID: 484361271051052908}
+  - component: {fileID: 484361271051052904}
   - component: {fileID: 484361271051052906}
   m_Layer: 0
   m_Name: CommandSystem
@@ -32,7 +34,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &484361271051052906
+--- !u!114 &484361271051052908
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -44,7 +46,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3386aaa2cc35044aa056ce172a0c143, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  commands: []
-  commandsToSend: []
-  bConditionsAreMet: 1
-  currentCommand: []
+  connection: {fileID: 484361271051052904}
+  foodList: {fileID: 11400000, guid: 41cabcc842e9cd54b9a5e6c7b07133f9, type: 2}
+  restaurantMenu: []
+  uIOrderManager: {fileID: 0}
+  customerOrders: []
+--- !u!114 &484361271051052904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8381155983977828125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1455a3b78a53914489952e805a3a9ebc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  message: 
+--- !u!114 &484361271051052906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8381155983977828125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8306594cdcea0be46a4ca5e25d24f5b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TexturesList: []

@@ -14593,7 +14593,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5623181460722629398}
-  - component: {fileID: 8504965121201095955}
+  - component: {fileID: -7213455058062188317}
   - component: {fileID: 4079897951640686539}
   - component: {fileID: 8037386908176486165}
   m_Layer: 0
@@ -14622,7 +14622,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8504965121201095955
+--- !u!114 &-7213455058062188317
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -14631,16 +14631,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 5623181460722629399}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 010affd9dc6036d4a9d83e0ed6a4fecc, type: 3}
+  m_Script: {fileID: 11500000, guid: 0688b24580dc4de488356181b1b0ff7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Destination: {x: 0, y: 0, z: 0}
-  speed: 5
-  tolerance: 3
-  Fireworks: {fileID: 6691911880341003487}
+  Fireworks: {fileID: 3552740527485419297}
   Nope: {fileID: 2100544361901235256}
   animator: {fileID: 5019792022544667174}
-  NPCanimator: {fileID: 8037386908176486165}
+  speed: 5
+  tolerance: 2.5
+  destination: {x: 0, y: 0, z: 0}
+  orderTaken: 0
+  currentOrder: {fileID: 0}
+  exit: {x: 0, y: 0, z: 0}
   npcManager: {fileID: 0}
 --- !u!54 &4079897951640686539
 Rigidbody:
