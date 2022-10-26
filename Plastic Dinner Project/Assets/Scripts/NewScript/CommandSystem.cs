@@ -105,10 +105,19 @@ public class CommandSystem : MonoBehaviour
 
                         // Add Score
                         string scoreGain = connection.message.Split('|')[1];
-                        scoreGain = scoreGain.Remove(0, 3);
+                        if(scoreGain == "1.000")
+                        {
+                            scoreGain = scoreGain.Replace(".","");
+                        }
+                        else
+                        {
+                            scoreGain = scoreGain.Remove(0, 3);
+                        }
+                      
                         float score = float.Parse(scoreGain);
                         scoreSystem.AddScore(score);
                         scoreSystem.AddMultplier(0.5f);
+                        Debug.Log(score);
                     }
                     else
                     {
@@ -127,11 +136,15 @@ public class CommandSystem : MonoBehaviour
 
     public static void DestroyOrder(Command order, bool isSucess = true)
     {
+       
         Instance.DestroyOrder_Impl(order, isSucess);
     }
 
     private void DestroyOrder_Impl(Command order, bool isSuccess = true)
     {
+        if (isSuccess)
+            scoreSystem.AddMultplier(-0.2f);
+
         NPCManager.DestroyNPC(order, isSuccess);
         uIOrderManager.DestroyOrder(order);
         customerOrders.Remove(order);
