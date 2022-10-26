@@ -7,6 +7,7 @@ public class CutUI : MonoBehaviour
 {
     public Image image1;
     public Image image2;
+    public Animator animator;
     AudioSource[] knifeAudio;
 
     void Start()
@@ -14,6 +15,10 @@ public class CutUI : MonoBehaviour
         knifeAudio = GetComponents<AudioSource>();
     }
 
+    public void PlayIntro()
+    {
+        animator.Play("IntroKnifeAnim");
+    }
     public void CutSwitch()
     {
         if (image1.enabled)

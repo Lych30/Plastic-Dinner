@@ -77,6 +77,7 @@ public class CommandSystem : MonoBehaviour
                     needCuts = true;
                     cutsCount = Random.Range(minCut, maxCut);
                     cutsUI.SetActive(true);
+                    cutUIScript.PlayIntro();
                     textCut.text = cutsCount.ToString();
                 }
 
