@@ -10,13 +10,15 @@ Material:
   m_Name: Jam
   m_Shader: {fileID: -6465566751694194690, guid: edf4088c745ffdb44b3aa6ed00bbfe19,
     type: 3}
-  m_ValidKeywords: []
+  m_ValidKeywords:
+  - _SPECULAR_SETUP
   m_InvalidKeywords: []
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
-  stringTagMap: {}
+  stringTagMap:
+    RenderType: Opaque
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
@@ -59,13 +61,25 @@ Material:
     - Rim_Power: 6.28
     - Toon_Ramp_Offset: 0.501
     - Toon_Ramp_Smoothness: 0.5
+    - _AlphaClip: 0
+    - _Blend: 0
     - _Brightness: 0
+    - _CastShadows: 1
+    - _Cull: 0
+    - _DstBlend: 0
     - _QueueControl: 0
     - _QueueOffset: 0
+    - _ReceiveShadows: 1
     - _RimPower: 5
+    - _SrcBlend: 1
+    - _Surface: 0
     - _Tiling: 6.11
     - _ToonRampOffset: 1
     - _ToonRampSmothness: 1
+    - _WorkflowMode: 0
+    - _ZTest: 4
+    - _ZWrite: 1
+    - _ZWriteControl: 0
     m_Colors:
     - Toon_Ramp_Tint: {r: 0.6792453, g: 0.3274586, b: 0.06087574, a: 1}
     - _Color: {r: 0.7830189, g: 0.6593622, b: 0.52078146, a: 1}
