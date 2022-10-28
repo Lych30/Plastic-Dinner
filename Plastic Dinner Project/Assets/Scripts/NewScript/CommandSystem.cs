@@ -13,14 +13,14 @@ public class CommandSystem : MonoBehaviour
     [Header("_____GAMEPLAY_____")]
     public FoodList foodList;
     public List<Command> restaurantMenu;
-
+    [HideInInspector]public float TempScore = 0;
     [Header("_____CUTS______")]
     public GameObject cutsUI;
     public CutUI cutUIScript;
     public TMP_Text textCut;
     public float timerCutDelay = 20.0f;
-    public int minCut = 10;
-    public int maxCut = 30;
+    public int minCut = 5;
+    public int maxCut = 15;
 
     [Header("_____CUTS DEBUG______")]
     public float cutDelay = 0.0f;
@@ -113,8 +113,9 @@ public class CommandSystem : MonoBehaviour
                         {
                             scoreGain = scoreGain.Remove(0, 3);
                         }
-                      
+                        
                         float score = float.Parse(scoreGain);
+                        TempScore = score;
                         scoreSystem.AddScore(score);
                         scoreSystem.AddMultplier(0.5f);
                         Debug.Log(score);

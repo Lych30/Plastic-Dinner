@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class NPCController : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class NPCController : MonoBehaviour
     public ParticleSystem Nope;
     public Animator animator;
     public Animator NPCanimator;
+    public Animator TextAnimator;
+    public TextMeshPro NPCscore;
     public float speed = 5.0f;
     public float tolerance = 4.0f;
 
@@ -64,6 +67,9 @@ public class NPCController : MonoBehaviour
                 animator.Play("waiting");
                 NPCanimator.Play("CustomerIdle");
             }
+        }
+        if (Input.GetKeyDown(KeyCode.T)) {
+            transform.GetChild(transform.childCount - 1).GetComponentInChildren<Animator>().Play("AddScore");
         }
     }
 
@@ -128,5 +134,10 @@ public class NPCController : MonoBehaviour
         yield return new WaitForSeconds(delay);
         TriggerAnim(trigger);
         Debug.Log(trigger);
+    }
+    public void TextAnim()
+    {
+        NPCscore.text = "+ " + CommandSystem.Instance.TempScore;
+        TextAnimator.Play("AddScore");
     }
 }
